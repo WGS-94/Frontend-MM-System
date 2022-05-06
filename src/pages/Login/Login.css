@@ -1,0 +1,85 @@
+.container {
+  width: 350px;
+  max-width: 700px;
+  height: 450px;
+  /*border: 1px solid #fff;*/
+  left: 50%; 
+  margin: -130px 0 0 -210px; 
+  padding:10px;
+  position: absolute; 
+  top: 35%;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.content .logo img{
+  width: 200px;
+  height: 200px;
+  margin-bottom: 10px;
+}
+.content form {
+  width: 100%;
+  height: 0 auto;
+}
+.content form input{
+  width: 100%;
+  margin-bottom: 10px;
+  /*border: 1px solid #E8643A;*/
+  font-size: 15px;
+  height: 42px;
+  border-radius: 10px;
+  padding: 0 15px;
+  background: #D2CFCF;
+  border: none;
+  outline: none;
+  color: #333;
+  font-weight: bold;
+}
+
+.content form input::placeholder{
+  font-size: 15px;
+  font-weight: bold;
+}
+.content form button.btn {
+  width: 100%;
+  margin-bottom: 30px;
+  font-size: 16px;
+  height: 42px;
+  background: #E8643A;
+  border-radius: 10px;
+  border: 0;
+  color: #fff;
+  cursor: pointer;
+  font-weight: bold;
+}
+.content form button.btn:hover {
+  background: #963a1e;
+  color: #fff;
+}
+.content form .cadastro-email{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+.content form .cadastro-email img {
+  width: 35px;
+  height: 35px;
+  margin-left: 2px;
+  color: #fff;
+}
+.content form .cadastro-email a {
+  font-size: 18px;
+  color: #fff;
+  margin-left: 10px;
+  margin-top: 5px;
+  text-decoration: none;
+}
+.content form .cadastro-email a:hover{
+  /*text-decoration: underline;*/
+  color: #E8643A
+}
