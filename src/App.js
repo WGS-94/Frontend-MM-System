@@ -1,11 +1,22 @@
 import React from 'react';
+import { ToastContainer } from "react-toastify";
+import { AuthProvider } from "./hooks/auth";
 
-import './App.css';
-import Routes from "./routes";
+import { BrowserRouter as Router } from "react-router-dom";
+
+import Routes from "./routes/Routes";
+import GlobalStyle from './GlobalStyle';
 
 function App() {
   return (
-    <Routes />
+    <Router>
+       <AuthProvider>
+         <Routes />
+       </AuthProvider>
+       <ToastContainer autoClose={3000} />
+       <GlobalStyle />
+    </Router>
+    
   );
 }
 
