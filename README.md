@@ -1,3 +1,7 @@
+<h1 align="center">
+    <img alt="MM-System" title="Sistema de Monitoramento de Máquina" src="" width="220px" />
+</h1>
+
 <p align="center">
   <a href="#rocket-tecnologias">Tecnologias</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#-projeto">Projeto</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
@@ -9,7 +13,11 @@
 ## Login
 
 <p align="center">
- <img src="https://user-images.githubusercontent.com/87288949/169928034-99155de8-01f1-4841-b3f3-d50add0d6f61.PNG" alt="PRs welcome!" />
+
+  <img src="https://user-images.githubusercontent.com/87288949/169928034-99155de8-01f1-4841-b3f3-d50add0d6f61.PNG" alt="Login" />
+  
+  <img src="https://user-images.githubusercontent.com/87288949/169928443-4b5577d8-d9f4-4c49-b510-861abc682651.PNG" alt="Register!" />
+  
 </p>
 
 ## 🚀 Tecnologias
