@@ -1,4 +1,4 @@
-<h1 align="center" color="#E8643A">
+<h1 align="center" style={{color:'#E8643A'}}>
     Sistema de Monitoramento de Máquina
 </h1>
 
@@ -13,11 +13,13 @@
 ## Login
 
 <p align="center">
-
   <img src="https://user-images.githubusercontent.com/87288949/169928034-99155de8-01f1-4841-b3f3-d50add0d6f61.PNG" alt="Login" />
-  
+</p>
+
+## Register
+
+<p align="center">
   <img src="https://user-images.githubusercontent.com/87288949/169928443-4b5577d8-d9f4-4c49-b510-861abc682651.PNG" alt="Register!" />
-  
 </p>
 
 ## 🚀 Tecnologias
@@ -26,6 +28,7 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 
 - [Node.js](https://nodejs.org/en/)
 - [React](https://reactjs.org)
+- [MongoDB](https://www.mongodb.com/)
 
 ## 💻 Projeto
 
