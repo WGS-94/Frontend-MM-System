@@ -1,6 +1,11 @@
-<h1 align="center" style="color: #E8643A" color="orange">
+<!--<h1 align="center" style="color: #E8643A" color="orange">
     Sistema de Monitoramento de Máquina
-</h1>
+</h1>-->
+
+```diff
+! text in orange
+@@ Sistema de Monitoramento de Máquina @@
+```
 
 <p align="center">
   <a href="#rocket-tecnologias">Tecnologias</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
