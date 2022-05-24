@@ -1,5 +1,5 @@
-<h1 align="center">
-    <img alt="MM-System" title="Sistema de Monitoramento de Máquina" src="" width="220px" />
+<h1 align="center" color="#E8643A">
+    Sistema de Monitoramento de Máquina
 </h1>
 
 <p align="center">
