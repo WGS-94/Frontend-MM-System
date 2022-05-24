@@ -1,4 +1,4 @@
-<h1 align="center" style={{color:'#E8643A'}}>
+<h1 align="center" style="color: #E8643A" color="orange">
     Sistema de Monitoramento de Máquina
 </h1>
 
