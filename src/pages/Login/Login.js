@@ -28,6 +28,8 @@ function Login() {
 
    // event.preventDefault()
 
+   console.log(email, password)
+
     try {
       await signIn(
         {

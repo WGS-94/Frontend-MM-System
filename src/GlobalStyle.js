@@ -35,6 +35,15 @@ button {
   font-family: 700 1.6rem Roboto;
 } 
 
+
+@media (max-width: 768px) {
+
+html {
+  font-size: 87.5%;
+}
+
+}
+
 @media (min-width: 700px) {
   :root {
     font-size: 62.5%;
