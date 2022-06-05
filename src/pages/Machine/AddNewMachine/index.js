@@ -1,13 +1,14 @@
 import React from 'react';
-import { Form, Input } from "@rocketseat/unform";
+import { Link } from 'react-router-dom';
+//import { Form, Input } from "@rocketseat/unform";
 import Header from '../../../components/Header/Nav';
 
 import '../AddNewMachine/style.css';
 
 function AddNewMachine() {
 
-  function handleSubmitNewMachine() {
-
+  function handleSubmitNewMachine(event) {
+    console.log(event)
   }
   
   return (
@@ -20,16 +21,33 @@ function AddNewMachine() {
         <div className="content__newMachine">
 
           <div className="content__newMachine__fields">
-            <Form onSubmit={handleSubmitNewMachine}>
+            <form onSubmit={handleSubmitNewMachine}>
+              <label id="thumbnail" htmlFor="file">
+                <span>Clique ou arraste o arquivo!</span>
+                <input type="file" id="file" />
+              </label>
               <label htmlFor="">Nome da Máquina: </label>
-              <Input type="text" />
-              <label htmlFor="">Parâmetro</label>
-              <Input type="text" />
+              <input type="text" />
+              <label htmlFor="">Parâmetros</label>
+              <input type="text" />
               <label htmlFor="">Fabricante</label>
-              <Input type="text" />
+              <input type="text" />
               <label htmlFor="">Descrição</label>
-              <textarea name="" id="" />
-            </Form>
+              <textarea  
+                placeholder='Digite uma descrição da máquina' 
+                name="comment"
+                id=""
+              />
+              <div className="btn__save__Machine">
+                <Link to='/dashboard' className="btnBack" type="Link">
+                  Voltar
+                </Link>
+                <button className="btnRegister" type="submit">
+                  Cadastrar
+                </button>
+              </div>
+              
+            </form>
           </div>
         </div>
 

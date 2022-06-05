@@ -23,15 +23,126 @@
 .content__newMachine__fields {
   width: 800px;
   height: auto;
+  background: #413D4F;
+  border-radius: 5px;
 
-  border: 1px solid #fff;
+  /*border: 1px solid #fff;*/
 }
 
-
 .content__newMachine__fields form {
-  padding: 20px;
+  padding: 30px;
   display: flex;
   flex-direction: column;
 }
+.content__newMachine__fields form label {
+  display: inline-block;
+  position: relative;
+  margin-bottom: 8px;
+  font-size: 14px;
+  color: #fff;
+}
 
+.content__newMachine__fields form input{
+  width: 100%;
+  margin-bottom: 10px;
+  /*border: 1px solid #E8643A;*/
+  font-size: 15px;
+  height: 42px;
+  border-radius: 6px;
+  padding: 0 15px;
+  background: #D2CFCF;
+  border: none;
+  outline: none;
+  color: #333;
+  font-weight: bold;
+}
+.content__newMachine__fields form textarea {
+  width: 100%;
+  margin-bottom: 10px;
+  background: #D2CFCF;
+  border: 0;
+  outline: 0;
+  resize: none;
+  height: 8rem;
+  padding: 1rem;
+  border-radius: 6px;
+  color: #333;
+  line-height: 1.4;
+  font-weight: bold;
+  font-size: 15px;
+}
+
+.content__newMachine__fields form textarea::placeholder {
+  font-size: 13px;
+}
+
+.btn__save__Machine{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  gap: 10px;
+}
+
+.btn__save__Machine a.btnBack {
+  width: 120px;
+  margin-top: 10px;
+  font-size: 16px;
+  height: 42px;
+  background: #6E4BF8;
+  border-radius: 6px;
+  border: 0;
+  color: #fff;
+  cursor: pointer;
+  font-weight: bold;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  text-decoration: none;
+}
+
+.btn__save__Machine a.btnBack:hover {
+  background: #8a75df;
+}
+
+.btn__save__Machine button.btnRegister {
+  width: 120px;
+  margin-top: 10px;
+  font-size: 16px;
+  height: 42px;
+  background: #E8643A;
+  border-radius: 6px;
+  border: 0;
+  color: #fff;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.btn__save__Machine button.btnRegister:hover {
+  background: #963a1e;
+  color: #fff;
+}
+
+label#thumbnail {
+  margin-bottom: 20px;
+  border: 1px dashed #ddd;
+  background-size: cover;
+  cursor: pointer;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 6px;
+}
+
+label#thumbnail input {
+  display: none;
+}
+
+label#thumbnail span {
+  color: #ddd;
+  font-size: 16px;
+}
 
