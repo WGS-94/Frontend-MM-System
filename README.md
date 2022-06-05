@@ -11,7 +11,7 @@
 </p>
 
 ## Login
-
+<!--
 <p align="center">
   <img src="https://user-images.githubusercontent.com/87288949/169928034-99155de8-01f1-4841-b3f3-d50add0d6f61.PNG" alt="Login" />
 </p>
@@ -20,7 +20,7 @@
 
 <p align="center">
   <img src="https://user-images.githubusercontent.com/87288949/169928443-4b5577d8-d9f4-4c49-b510-861abc682651.PNG" alt="Register!" />
-</p>
+</p> -->
 
 ## 🚀 Tecnologias
 
