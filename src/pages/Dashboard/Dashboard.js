@@ -5,6 +5,7 @@ import api from '../../services/api';
 import NavBar from '../../components/Header/Nav';
 
 import './Dashboard.css';
+import { Link } from 'react-router-dom';
 
 function Dashboard() {
 
@@ -28,12 +29,14 @@ function Dashboard() {
     <div>
       <NavBar />
       <div className='dasboardConteiner'>
-        <div className="main-container">
+        <div className="user__and__addNewMachine">
           <p>Olá <span>{user.name}</span>, seja bem-vindo!</p>
+          <Link to="/add-new-machine">Adicionar nova máquina</Link>
+        </div>
+        <div className="main-container">
           <div className="heading">
             <h1 className="heading__title">Machine Monitoring System - MMS</h1>
           </div>
-
             <div className="cards">
             {data.map((machine) => (
             <div  key={machine._id} className="card card-1">

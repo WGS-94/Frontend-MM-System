@@ -7,18 +7,53 @@
   padding: 0;
 }
 
-.main-container {
-  padding: 40px;
+.dasboardConteiner {
+  padding: 20px;
 }
 
-.main-container > p {
+.user__and__addNewMachine {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.user__and__addNewMachine > p {
   font-size: 18px;
   color: #E8643A;
 }
-
-.main-container > p > span {
+.user__and__addNewMachine > p > span {
   color: #eee;
 }
+
+.user__and__addNewMachine > a{
+  width: 200px;
+  height: 40px;
+  font-size: 14px;
+  background: #43B05C;
+  color: #fff;
+  border-radius: 5px;
+  border: 0;
+  outline: 0;
+  cursor: pointer;
+  font-weight: bold;
+  text-decoration: none;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.user__and__addNewMachine > a:hover {
+  background: #4ac466;
+  color: #fff;
+}
+
+.main-container {
+  padding: 0 30px;
+
+  /*border: 1px solid #fff;*/
+}
+
 /* HEADING */
 
 .heading {
@@ -36,7 +71,8 @@
 .cards {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  padding: 0 20px;
+
+  /*border: 1px solid red;*/
 }
 
 .card {
