@@ -1,0 +1,37 @@
+.container__newMachine {
+  padding: 20px;
+
+  /*border: 1px solid #fff;*/
+}
+
+.heading {
+  text-align: center;
+}
+
+.heading__title {
+  font-weight: 600;
+  color: #fff;
+  margin: 2rem;
+}
+
+.content__newMachine {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.content__newMachine__fields {
+  width: 800px;
+  height: auto;
+
+  border: 1px solid #fff;
+}
+
+
+.content__newMachine__fields form {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+
