@@ -1,11 +1,13 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { useAuth } from "../../hooks/auth";
 import api from '../../services/api';
 
 import NavBar from '../../components/Header/Nav';
+import Transition from '../../components/Transition';
 
 import './Dashboard.css';
-import { Link } from 'react-router-dom';
+
 
 function Dashboard() {
 
@@ -17,6 +19,8 @@ function Dashboard() {
       const user_id = localStorage.getItem("@mmsystem:userID");
 
       const response = await api.get(`/machines/user/${user_id}`);
+
+      console.log(response) // retornando nada, resolver com o back-end
 
       const allStatus = response.data.status;
 
@@ -36,11 +40,13 @@ function Dashboard() {
           <Link to="/add-new-machine">Adicionar nova máquina</Link>
         </div>
 
-
+        
         <div className="main-container">
           <div className="heading">
             <h1 className="heading__title">Machine Monitoring System - MMS</h1>
           </div>
+
+            <Transition />
             <div className="cards">
             {data.map((machine) => (
             <div  key={machine._id} className="card card-1">
