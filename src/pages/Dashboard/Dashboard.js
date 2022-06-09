@@ -26,7 +26,7 @@ function Dashboard() {
 
       console.log(allStatus)
       
-      setData(response.data);
+      setData(response.data.machines);
     }
     loadData();
   }, []);
@@ -46,7 +46,7 @@ function Dashboard() {
             <h1 className="heading__title">Machine Monitoring System - MMS</h1>
           </div>
 
-            <Transition />
+          {data.length > 0 ?
             <div className="cards">
             {data.map((machine) => (
             <div  key={machine._id} className="card card-1">
@@ -78,7 +78,9 @@ function Dashboard() {
 
           ))}
           </div>
-
+          : (
+            <Transition />
+          )}
         </div>
       </div>
     </div>
