@@ -22,13 +22,14 @@ function Login() {
   const { signIn, loading, setLoading } = useAuth();
   //const [hiddenPassword, setHiddenPassord] = useState(true)
 
-   //const loading = useSelector(useAuth()); , { useState }
-
    async function handleSubmit({ email, password }) {
 
    // event.preventDefault()
+    if (!email || !password ) {
+      return toast.error("Não foi possível fazer login. Preencha todos os campos corretamente!");
+    }
 
-   console.log(email, password)
+   //console.log(email, password)
 
     try {
       await signIn(
@@ -81,10 +82,12 @@ function Login() {
           <button className="btn" type="submit">
             {loading ? <i style={{ fontSize: 5 }} className="fa fa-spinner fa-pulse"/> : 'Entrar' }
           </button>
-          <div className="cadastro-email">
-            <img src={RegisterIcon} color="#fff" alt="Envelope" />
-            <Link to="/register" >Cadastrar E-mail</Link>
-          </div>
+          <Link to="/register">
+            <div className="cadastro-email" >
+              <img src={RegisterIcon} color="#fff" alt="Envelope" /> 
+              <span>Cadastrar E-mail</span>
+            </div>
+          </Link>
         </Form>
       </div>
     </div>
