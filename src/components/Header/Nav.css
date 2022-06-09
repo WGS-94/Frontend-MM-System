@@ -28,6 +28,7 @@
  .logoImg img {
   width: 100px;
   height: 50px;
+  cursor: pointer;
  }
 
  /* NAVBAR MENU */
