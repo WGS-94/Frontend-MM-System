@@ -50,6 +50,7 @@ export const AuthProvider = ({ children }) => {
 
     localStorage.setItem("@mmsystem:token", token);
     localStorage.setItem("@mmsystem:user", JSON.stringify(user));
+    localStorage.setItem("@mmsystem:userID", user._id);
     setLoading(false)
     api.defaults.headers.authorization = `Bearer ${token}`;
 

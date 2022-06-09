@@ -44,8 +44,8 @@ function Login() {
         }
       );
 
-      /*localStorage.setItem('token', response.data.token)
-      console.log('token', response.data.token)*/
+       /*localStorage.setItem('@mmsystem:userID', response.data.token)
+     console.log('token', response.data.token)*/
 
       history.push("/dashboard");
 

@@ -44,7 +44,7 @@ function Register() {
 
       console.log('data', name, email, password)
 
-      localStorage.setItem("@mmsystem:user", response.data._id);
+      localStorage.setItem("@mmsystem:userID", response.data._id);
 
       await signIn({
         email,

@@ -14,7 +14,9 @@ function Dashboard() {
 
   React.useEffect(() => {
     async function loadData() {
-      const response = await api.get(`/machines`);
+      const user_id = localStorage.getItem("@mmsystem:userID");
+
+      const response = await api.get(`/machines/user/${user_id}`);
 
       const allStatus = response.data.status;
 
@@ -33,6 +35,8 @@ function Dashboard() {
           <p>Olá <span>{user.name}</span>, seja bem-vindo!</p>
           <Link to="/add-new-machine">Adicionar nova máquina</Link>
         </div>
+
+
         <div className="main-container">
           <div className="heading">
             <h1 className="heading__title">Machine Monitoring System - MMS</h1>
