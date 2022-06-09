@@ -13,7 +13,7 @@ function Dashboard() {
 
   const { user } = useAuth();
   const [data, setData] = React.useState([]);
-  const [loading, setLoading] = React.useState(false);
+  const [loading, setLoading] = React.useState(true);
 
   React.useEffect(() => {
     async function loadData() {
