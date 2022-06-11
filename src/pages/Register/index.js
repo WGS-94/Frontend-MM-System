@@ -44,7 +44,7 @@ function Register() {
 
       console.log('data', name, email, password)
 
-      localStorage.setItem("@mmsystem:user", response.data._id);
+      localStorage.setItem("@mmsystem:userID", response.data._id);
 
       await signIn({
         email,
@@ -99,11 +99,19 @@ function Register() {
             />
           </div>
           <button className="btn" type="submit">
-            {loading ? <i style={{ fontSize: 5 }} className="fa fa-spinner fa-pulse"/> : 'Entrar' }
+            {loading ? <i 
+                className="fa fa-spinner fa-pulse fa-4x" 
+                aria-hidden="true"
+                style={{fontSize: 30, color: 'red' }}  
+              /> : 'Entrar' 
+            }
           </button>
-          <div className="cadastro-email">
-            <Link to="/" ><img src={RegisterIcon} color="#fff" alt="Envelope" /> Já tenho Login</Link>
-          </div>
+          <Link to="/">
+            <div className="cadastro-email" >
+              <img src={RegisterIcon} color="#fff" alt="Envelope" /> 
+              <span>Já tenho Login</span>
+            </div>
+          </Link>
         </Form>
       </div>
     </div>

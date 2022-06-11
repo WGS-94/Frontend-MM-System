@@ -1,20 +1,59 @@
-import React, { useState } from 'react';
-import api from '../../services/api';
+import React from 'react';
+import { toast } from "react-toastify";
+import { Form, Input } from "@rocketseat/unform";
+import { Link, useHistory } from "react-router-dom";
 import logoImg from '../../assets/logo.svg';
 import RegisterIcon from '../../assets/registo.svg';
+import * as Yup from "yup";
+
+import { useAuth } from "../../hooks/auth";
+
+import '../Login/Login.css';
+
+// Validation .email("Email Inválido").required("E-mail é obrigatório")
+const Schema = Yup.object().shape({
+  email: Yup.string(),
+  password: Yup.string(),
+});
 
 function Login() {
 
-  const [email, setEmail] = useState('');
+  const history = useHistory();
+  const { signIn, loading, setLoading } = useAuth();
+  //const [hiddenPassword, setHiddenPassord] = useState(true)
 
-  async function handleSubmit(event) {
-    event.preventDefault()
+   async function handleSubmit({ email, password }) {
 
-    const response = await api.post('/sessions', { email });
-    const { _id } = response.data;
+   // event.preventDefault()
+    if (!email || !password ) {
+      return toast.error("Não foi possível fazer login. Preencha todos os campos corretamente!");
+    }
 
-    localStorage.setItem('user', _id);
-    
+   //console.log(email, password)
+
+    try {
+      await signIn(
+        {
+          email,
+          password,
+        },
+        {
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      );
+
+       /*localStorage.setItem('@mmsystem:userID', response.data.token)
+     console.log('token', response.data.token)*/
+
+      history.push("/dashboard");
+
+      toast.success(`Bem vindo, Login efetuado com sucesso!`);
+    } catch (error) {
+      setLoading(false)
+      toast.error("Senha ou E-mail incorretos!");
+    }
   }
 
   return (
@@ -23,27 +62,33 @@ function Login() {
         <div className="logo">
           <img src={logoImg} alt="logomark" />
         </div>
-        <form onSubmit={handleSubmit}>
+        <Form schema={Schema} onSubmit={handleSubmit}>
           <div className="input-type">
-            <input 
-            type="email" 
-            name="email" 
-            id="email" 
-            placeholder="E-mail"
-            value={email}
-            onChange={event => setEmail(event.target.value)}
+            <Input 
+              type="email" 
+              name="email" 
+              id="email" 
+              placeholder="E-mail"
             />
           </div>
-         {/* <div className="input-type">
-            <input type="password" name="password" id="password" placeholder="Password  "/>
-          </div>*/}
-          <button className="btn" type="submit">ENTRAR</button>
-
-          <div className="cadastro-email" >
-            <img src={RegisterIcon} alt="Envelope" />
-            <a href="/register" >Cadastrar E-mail</a>
-        </div>
-        </form>
+         <div className="input-type">
+            <Input 
+              type="password" 
+              name="password" 
+              id="password" 
+              placeholder="Password"
+            />
+          </div>
+          <button className="btn" type="submit">
+            {loading ? <i style={{ fontSize: 5 }} className="fa fa-spinner fa-pulse"/> : 'Entrar' }
+          </button>
+          <Link to="/register">
+            <div className="cadastro-email" >
+              <img src={RegisterIcon} color="#fff" alt="Envelope" /> 
+              <span>Cadastrar E-mail</span>
+            </div>
+          </Link>
+        </Form>
       </div>
     </div>
   )

@@ -1,14 +1,14 @@
 import React from 'react';
 import { toast } from "react-toastify";
-//import api from '../../services/api';
 import { Form, Input } from "@rocketseat/unform";
 import { Link, useHistory } from "react-router-dom";
 import logoImg from '../../assets/logo.svg';
 import RegisterIcon from '../../assets/registo.svg';
 import * as Yup from "yup";
-import '../Login/Login.css';
 
 import { useAuth } from "../../hooks/auth";
+
+import {Container, Content} from './style';
 
 // Validation .email("Email Inválido").required("E-mail é obrigatório")
 const Schema = Yup.object().shape({
@@ -57,8 +57,8 @@ function Login() {
   }
 
   return (
-    <div id="login-content" className="container">
-      <div className="content">
+    <Container>
+      <Content>
         <div className="logo">
           <img src={logoImg} alt="logomark" />
         </div>
@@ -89,8 +89,8 @@ function Login() {
             </div>
           </Link>
         </Form>
-      </div>
-    </div>
+      </Content>
+    </Container>
   )
 }
 

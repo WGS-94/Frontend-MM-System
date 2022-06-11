@@ -1,7 +1,7 @@
 import React from 'react';
-import Login from '../pages/Login/Login';
-import Register from '../pages/Register/Register';
-import Dashboard from '../pages/Dashboard/Dashboard';
+import Login from '../pages/Login';
+import Register from '../pages/Register';
+import Dashboard from '../pages/Dashboard';
 import AddNewMachine from '../pages/Machine/AddNewMachine'
 
 import { BrowserRouter as Router, Switch } from "react-router-dom";
