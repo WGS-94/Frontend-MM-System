@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import api from '../../services/api';
-import logoImg from '../../img/logo.svg';
-import RegisterIcon from '../../img/registo.svg';
+import logoImg from '../../assets/logo.svg';
+import RegisterIcon from '../../assets/registo.svg';
 
 function Login() {
 

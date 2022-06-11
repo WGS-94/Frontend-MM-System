@@ -1,7 +1,7 @@
 import React from 'react';
 import { useAuth } from "../../hooks/auth";
 
-import logoImg from '../../img/logo.svg';
+import logoImg from '../../assets/logo.svg';
 
 import './Nav.css';
 
