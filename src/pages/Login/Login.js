@@ -3,8 +3,8 @@ import { toast } from "react-toastify";
 //import api from '../../services/api';
 import { Form, Input } from "@rocketseat/unform";
 import { Link, useHistory } from "react-router-dom";
-import logoImg from '../../img/logo.svg';
-import RegisterIcon from '../../img/registo.svg';
+import logoImg from '../../assets/logo.svg';
+import RegisterIcon from '../../assets/registo.svg';
 import * as Yup from "yup";
 import '../Login/Login.css';
 
