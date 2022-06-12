@@ -3,10 +3,12 @@ import { Link } from 'react-router-dom';
 import { useAuth } from "../../hooks/auth";
 import api from '../../services/api';
 
-import NavBar from '../../components/Header/Nav';
+import Header from '../../components/Header/Nav';
 import Transition from '../../components/Transition';
 
-import './Dashboard.css';
+//import './Dashboard.css';
+
+import { Card, CardAbout, CardAboutButtons, CardAboutMachine, CardContent, Cards, CardStatus, Container, FirstContent, Heading, MainContent, UserAndAddMachine } from './style';
 
 
 function Dashboard() {
@@ -33,21 +35,56 @@ function Dashboard() {
   }, []);
 
   return (
-    <div>
-      <NavBar />
-      <div className='dasboardConteiner'>
-        <div className="user__and__addNewMachine">
-          <p>Olá <span>{user.name}</span>, seja bem-vindo!</p>
-          <Link to="/add-new-machine">Adicionar nova máquina</Link>
-        </div>
-
-        
-        <div className="main-container">
-          <div className="heading">
+    <>
+      <Header />
+      <Container>
+        <FirstContent>
+          <UserAndAddMachine>
+            <p>Olá <span>{user.name}</span>, seja bem-vindo!</p>
+            <Link to="/add-new-machine">Adicionar nova máquina</Link>
+          </UserAndAddMachine>
+          <Heading>
             <h1 className="heading__title">Machine Monitoring System - MMS</h1>
-          </div>
+          </Heading>
+        </FirstContent>
+        
+        <MainContent>
+        
+          {data.length > 0 ?
+            <Cards>
+            {data.map((machine) => (
+            <Card  key={machine._id} className="card card-1">
+              <CardContent>
+                  <img src={machine.thumbnail_url} alt="machine" />
+                <CardAbout>
+                  <CardAboutMachine>
+                    <h2 className="card__title"><b>Nome:</b> {machine.machineName}</h2>
+                    <h2 className="card__title"><b>Parâmetros:</b> {machine.parameter}</h2>
+                    <h2 className="card__title"><b>Fabricante:</b> {machine.manufacturer}</h2>
+                    <h2 className="card__title"><b>Descrição:</b> {machine.description}</h2>
+                    <CardStatus>
+                      <b>{machine.status === true ? "Ativo" : "Desativo"}</b>
+                      <span className={ machine.status === true ? "green" : "red"}></span>
+                    </CardStatus>
+                  </CardAboutMachine>
+                  <CardAboutButtons>
+                    <span></span>
+                    <div>
+                      <button className='btn1'>Editar</button>
+                      <button className='btn2'>Excluir</button>
+                    </div>
+                  </CardAboutButtons>
+                </CardAbout>
+              </CardContent>
+            </Card>
 
-          
+          ))}
+          </Cards>
+          : (
+            <Transition />
+          )}
+        </MainContent>
+
         {loading && (
           <div
             style={{
@@ -61,46 +98,8 @@ function Dashboard() {
           </div>
         )}
 
-          {data.length > 0 ?
-            <div className="cards" >
-            {data.map((machine) => (
-            <div  key={machine._id} className="card card-1">
-              <div className="card__content">
-                <div className="card__image">
-                  <img src={machine.thumbnail_url} alt="machine" />
-                </div>
-                <div className="card__about">
-                  <div className="card__about__product">
-                    <h2 className="card__title"><b>Nome:</b> {machine.machineName}</h2>
-                    <h2 className="card__title"><b>Parâmetros:</b> {machine.parameter}</h2>
-                    <h2 className="card__title"><b>Fabricante:</b> {machine.manufacturer}</h2>
-                    <h2 className="card__title"><b>Descrição:</b> {machine.description}</h2>
-                    <div className="card__status">
-                      <b>{machine.status === true ? "Ativo" : "Desativo"}</b>
-                      <span className={ machine.status === true ? "card__title_green" : "card__title_red"}></span>
-                    </div>
-                  </div>
-                  <div className="card__about__btn">
-                    <span></span>
-                    <div className='card__about__btns'>
-                      <button className='btn1'>Editar</button>
-                      <button className='btn2'>Excluir</button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-          ))}
-          </div>
-          : (
-            <Transition />
-          )}
-        </div>
-
-
-      </div>
-    </div>
+      </Container>
+    </>
   )
 }
 

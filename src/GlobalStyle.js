@@ -52,7 +52,6 @@ button {
   animation: spinner 1.5s linear infinite;
 }
 
-
 @media (max-width: 768px) {
 
 html {

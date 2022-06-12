@@ -34,16 +34,20 @@
   height: 42px;
   border-radius: 10px;
   padding: 0 15px;
-  background: #D2CFCF;
+  background: #413D4F;
   border: none;
   outline: none;
-  color: #333;
+  color: #eee;
   font-weight: bold;
+}
+.content form input:focus{
+  border: 1px solid #E8643A;
 }
 
 .content form input::placeholder{
   font-size: 15px;
   font-weight: bold;
+  color: #666;
 }
 .content form button.btn {
   width: 100%;
