@@ -24,6 +24,8 @@
   <img src="https://user-images.githubusercontent.com/87288949/173212286-de2d3193-41ee-49e6-a6b3-2744ee896112.PNG" alt="Register!" />
 </p>
 
+## Dashboard
+
 ## 🚀 Tecnologias
 
 Esse projeto foi desenvolvido com as seguintes tecnologias:
