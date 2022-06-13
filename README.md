@@ -11,16 +11,20 @@
 </p>
 
 ## Login
-<!--
 <p align="center">
-  <img src="https://user-images.githubusercontent.com/87288949/169928034-99155de8-01f1-4841-b3f3-d50add0d6f61.PNG" alt="Login" />
+  <img src="https://user-images.githubusercontent.com/87288949/173212285-fa8b5d69-3156-4251-b050-ad2d0de2c8af.PNG" alt="Login" />
+</p>
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/87288949/173212345-93dfad55-3d89-48ae-ae55-0524a6b949ea.PNG" alt="Login" />
 </p>
 
 ## Register
 
 <p align="center">
-  <img src="https://user-images.githubusercontent.com/87288949/169928443-4b5577d8-d9f4-4c49-b510-861abc682651.PNG" alt="Register!" />
-</p> -->
+  <img src="https://user-images.githubusercontent.com/87288949/173212286-de2d3193-41ee-49e6-a6b3-2744ee896112.PNG" alt="Register!" />
+</p>
+
+## Dashboard
 
 ## 🚀 Tecnologias
 
