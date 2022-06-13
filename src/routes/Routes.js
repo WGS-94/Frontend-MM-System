@@ -2,7 +2,7 @@ import React from 'react';
 import Login from '../pages/Login';
 import Register from '../pages/Register';
 import Dashboard from '../pages/Dashboard';
-import AddNewMachine from '../pages/Machine/AddNewMachine'
+import AddNewMachine from '../pages/Machine/AddNewMachine';
 
 import { BrowserRouter as Router, Switch } from "react-router-dom";
 
@@ -14,8 +14,8 @@ export default function Routes() {
        <Switch>
          <Route path="/" exact component={Login} />
          <Route path="/register" component={Register} />
-         <Route path="/dashboard" component={Dashboard} isPrivate/>
-         <Route path="/add-new-machine" component={AddNewMachine} isPrivate/>
+         <Route path="/dashboard" component={Dashboard} isPrivate />
+         <Route path="/add-new-machine" component={AddNewMachine} isPrivate />
        </Switch>
     </Router>
   )
