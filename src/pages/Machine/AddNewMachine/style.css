@@ -42,6 +42,13 @@
   color: #fff;
 }
 
+.content__newMachine__fields form input:focus {
+  border: 1px solid #E8643A;
+}
+.content__newMachine__fields form textarea:focus {
+  border: 1px solid #E8643A;
+}
+
 .content__newMachine__fields form input{
   width: 100%;
   margin-bottom: 10px;
@@ -50,23 +57,23 @@
   height: 42px;
   border-radius: 6px;
   padding: 0 15px;
-  background: #D2CFCF;
+  background: #2C2641;
   border: none;
   outline: none;
-  color: #333;
+  color: #eee;
   font-weight: bold;
 }
 .content__newMachine__fields form textarea {
   width: 100%;
   margin-bottom: 10px;
-  background: #D2CFCF;
+  background: #2C2641;
   border: 0;
   outline: 0;
   resize: none;
   height: 8rem;
   padding: 1rem;
   border-radius: 6px;
-  color: #333;
+  color: #eee;
   line-height: 1.4;
   font-weight: bold;
   font-size: 15px;
@@ -137,6 +144,10 @@ label#thumbnail {
   border-radius: 6px;
 }
 
+label#thumbnail:hover {
+  border: 1px dashed #E8643A;
+}
+
 label#thumbnail input {
   display: none;
 }
@@ -144,6 +155,10 @@ label#thumbnail input {
 label#thumbnail span {
   color: #ddd;
   font-size: 16px;
+}
+
+label#thumbnail span:hover {
+  color: #E8643A;
 }
 
 label#thumbnail .has-thumbnail {
