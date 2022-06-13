@@ -21,7 +21,7 @@ function AddNewMachine() {
   async function handleSubmitNewMachine({machineThumbail, machineName, machineParameter, machineManufacture, machineDescription}) {
 
     const response = api.post('/machines')
-    console.log({machineThumbail, machineName, machineParameter, machineManufacture, machineDescription})
+    console.log(response)
   }
   
   return (

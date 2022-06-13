@@ -9,11 +9,12 @@ import * as Yup from "yup";
 import { useAuth } from "../../hooks/auth";
 
 import '../Login/Login.css';
+import { Container, Content, LogoType } from './style';
 
 // Validation .email("Email Inválido").required("E-mail é obrigatório")
 const Schema = Yup.object().shape({
   email: Yup.string(),
-  password: Yup.string(),
+  password: Yup.string()
 });
 
 function Login() {
@@ -57,40 +58,36 @@ function Login() {
   }
 
   return (
-    <div id="login-content" className="container">
-      <div className="content">
-        <div className="logo">
+    <Container>
+      <Content>
+        <LogoType>
           <img src={logoImg} alt="logomark" />
-        </div>
+        </LogoType>
         <Form schema={Schema} onSubmit={handleSubmit}>
-          <div className="input-type">
-            <Input 
-              type="email" 
-              name="email" 
-              id="email" 
-              placeholder="E-mail"
-            />
-          </div>
-         <div className="input-type">
-            <Input 
-              type="password" 
-              name="password" 
-              id="password" 
-              placeholder="Password"
-            />
-          </div>
-          <button className="btn" type="submit">
+          <Input 
+            type="email" 
+            name="email" 
+            id="email" 
+            placeholder="E-mail"
+          />
+          <Input 
+            type="password" 
+            name="password" 
+            id="password" 
+            placeholder="Password"
+          />
+          <button type="submit">
             {loading ? <i style={{ fontSize: 5 }} className="fa fa-spinner fa-pulse"/> : 'Entrar' }
           </button>
           <Link to="/register">
-            <div className="cadastro-email" >
+            <div>
               <img src={RegisterIcon} color="#fff" alt="Envelope" /> 
               <span>Cadastrar E-mail</span>
             </div>
           </Link>
         </Form>
-      </div>
-    </div>
+      </Content>
+    </Container>
   )
 }
 

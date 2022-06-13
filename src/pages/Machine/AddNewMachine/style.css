@@ -145,7 +145,7 @@ label#thumbnail {
 }
 
 label#thumbnail:hover {
-  border: 1px dashed #E8643A;
+  border: 2px dashed #E8643A;
 }
 
 label#thumbnail input {
