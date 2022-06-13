@@ -1,21 +1,21 @@
 import React from 'react';
 import { toast } from "react-toastify";
-//import api from '../../services/api';
 import { Form, Input } from "@rocketseat/unform";
 import { Link, useHistory } from "react-router-dom";
 import logoImg from '../../assets/logo.svg';
 import RegisterIcon from '../../assets/registo.svg';
 import * as Yup from "yup";
-import '../Login/Login.css';
-
 import { useAuth } from "../../hooks/auth";
 import api from '../../services/api';
 
+import {Container, Content, LogoType } from './style';
+
 // Validation .email("Email Inválido").required("E-mail é obrigatório")
+//.required("Nome é obrigatório"), .required("Senha é obrigatório"),
 const Schema = Yup.object().shape({
-  name: Yup.string().required("Nome é obrigatório"),
-  email: Yup.string().email("Email Inválido").required("E-mail é obrigatório"),
-  password: Yup.string().required("Senha é obrigatório"),
+  name: Yup.string(),
+  email: Yup.string(),
+  password: Yup.string()
 });
 
 function Register() {
@@ -63,42 +63,36 @@ function Register() {
   }
 
   return (
-    <div id="Register-content" className="container">
-      <div className="content">
-        <div className="logo">
+    <Container>
+      <Content>
+        <LogoType>
           <img src={logoImg} alt="logomark" />
-        </div>
+        </LogoType>
         <Form schema={Schema} onSubmit={handleSubmit}>
-        <div className="input-type">
           <Input 
             type="name" 
             name="name" 
             id="name" 
             placeholder="Nome"
           />
-          </div>
-          <div className="input-type">
-            <Input 
-              type="email" 
-              name="email" 
-              id="email" 
-              placeholder="E-mail"
-              pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
-              required
-              minLength="8"
-            />
-          </div>
-         <div className="input-type">
-            <Input 
-              type="password" 
-              name="password" 
-              id="password" 
-              placeholder="Password"
-              required 
-              minLength="6"
-            />
-          </div>
-          <button className="btn" type="submit">
+          <Input 
+            type="email" 
+            name="email" 
+            id="email" 
+            placeholder="E-mail"
+            pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
+            required
+            minLength="8"
+          />
+          <Input 
+            type="password" 
+            name="password" 
+            id="password" 
+            placeholder="Password"
+            required 
+            minLength="6"
+          />
+          <button type="submit">
             {loading ? <i 
                 className="fa fa-spinner fa-pulse fa-4x" 
                 aria-hidden="true"
@@ -107,14 +101,14 @@ function Register() {
             }
           </button>
           <Link to="/">
-            <div className="cadastro-email" >
+            <div>
               <img src={RegisterIcon} color="#fff" alt="Envelope" /> 
               <span>Já tenho Login</span>
             </div>
           </Link>
         </Form>
-      </div>
-    </div>
+      </Content>
+    </Container>
   )
 }
 

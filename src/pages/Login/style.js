@@ -5,7 +5,7 @@ export const Container = styled.div`
   height: 450px;
   left: 50%; 
   margin: -130px 0 0 -170px; 
-  padding:10px;
+  padding: 1rem;
   position: absolute; 
   top: 35%;
 `;
@@ -22,11 +22,11 @@ export const Content = styled.div`
 
     input{
       width: 100%;
-      margin-bottom: 10px;
-      font-size: 15px;
+      margin-bottom: 1rem;
+      font-size: 1.5rem;
       height: 42px;
       border-radius: 5px;
-      padding: 0 15px;
+      padding: 1.5rem;
       background: #413D4F;
       border: none;
       outline: none;
@@ -34,7 +34,7 @@ export const Content = styled.div`
       font-weight: bold;
 
       &::placeholder{
-        font-size: 15px;
+        font-size: 1.5rem;
         font-weight: bold;
         color: #666;
       }
@@ -46,8 +46,8 @@ export const Content = styled.div`
 
     button {
       width: 100%;
-      margin-bottom: 30px;
-      font-size: 16px;
+      margin-bottom: 3rem;
+      font-size: 1.8rem;
       height: 42px;
       background: #E8643A;
       border-radius: 5px;
@@ -70,7 +70,7 @@ export const Content = styled.div`
         width: 100%;
         display: flex;
         align-items: center;
-        gap: 15px;
+        gap: 1rem;
 
         img {
           width: 35px;

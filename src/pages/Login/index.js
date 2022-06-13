@@ -5,10 +5,7 @@ import { Link, useHistory } from "react-router-dom";
 import logoImg from '../../assets/logo.svg';
 import RegisterIcon from '../../assets/registo.svg';
 import * as Yup from "yup";
-
 import { useAuth } from "../../hooks/auth";
-
-import '../Login/Login.css';
 import { Container, Content, LogoType } from './style';
 
 // Validation .email("Email Inválido").required("E-mail é obrigatório")
