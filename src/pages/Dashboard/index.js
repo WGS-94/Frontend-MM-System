@@ -2,13 +2,17 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { useAuth } from "../../hooks/auth";
 import api from '../../services/api';
-import { toast } from 'react-toastify';
+//import { toast } from 'react-toastify';
+import Modal from 'react-modal';
 import Header from '../../components/Header/Nav';
 import Transition from '../../components/Transition';
+import RemoveMachineModal from '../../components/RemoveMachineModal';
 
-//import './Dashboard.css';
-
-import { Card, CardAbout, CardAboutButtons, CardAboutMachine, CardContent, Cards, CardStatus, Container, FirstContent, Heading, MainContent, UserAndAddMachine } from './style';
+import { Card, CardAbout, CardAboutButtons, 
+         CardAboutMachine, CardContent, Cards, 
+         CardStatus, Container, FirstContent, 
+         Heading, MainContent, UserAndAddMachine,
+       } from './style';
 
 
 function Dashboard() {
@@ -16,6 +20,16 @@ function Dashboard() {
   const { user } = useAuth();
   const [data, setData] = React.useState([]);
   const [loading, setLoading] = React.useState(false);
+
+  const [modalIsOpen, setIsOpen] = React.useState(false);
+
+  function openModal() {
+    setIsOpen(true);
+  }
+
+  function closeModal() {
+    setIsOpen(false);
+  }
 
   React.useEffect(() => {
     async function loadData() {
@@ -37,20 +51,22 @@ function Dashboard() {
     
   }, []);
 
-  async function handleRemoveMachine() {
-
+  async function saveMachineIDToLocalStorage(id) {
     try {
-      /*await api.delete('/machines');
-      setLoading(true);
+      /*const user_id = localStorage.getItem("@mmsystem:userID");
 
-      toast.success("Máquina removida com sucesso");
+      const response = await api.get(`/machines/user/${user_id}`);*/
 
-      setLoading(false);*/
-    } catch (error) {
-      //console.log("ERRO", error);
-      return toast.error("Não foi possível remover esta máquina");
+      const newData = data.map(f => f._id === id)
+
+      console.log(newData)
+
+      //localStorage.setItem("@mmsystem:machineID", response.data.machines._id);
+
+    } catch (err) {
+      return undefined;
     }
-  }
+  };
 
   return (
     <>
@@ -67,7 +83,20 @@ function Dashboard() {
         </FirstContent>
         
         <MainContent>
-        
+
+          {loading && (
+              <div
+                style={{
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
+                }}
+              >
+                <i style={{ fontSize: 30, color: '#eee' }} className="fa fa-spinner fa-pulse"></i>
+                <span style={{ marginLeft: 5, color: '#eee' }}>Carregando as máquinas</span>
+              </div>
+            )}
+
           {data.length > 0 ?
             <Cards>
             {data.map((machine) => (
@@ -91,7 +120,7 @@ function Dashboard() {
                       <button className='btn1'>Editar</button>
                       <button 
                         className='btn2'
-                        onClick={() => {handleRemoveMachine()}}
+                        onClick={() => {saveMachineIDToLocalStorage(); openModal()}}
                       >
                         Excluir
                       </button>
@@ -107,21 +136,17 @@ function Dashboard() {
             <Transition />
           )}
         </MainContent>
-
-        {loading && (
-          <div
-            style={{
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
-            }}
-          >
-            <i style={{ fontSize: 30 }} className="fa fa-spinner fa-pulse"></i>
-            <span style={{ marginLeft: 5 }}>Carregando as máquinas</span>
-          </div>
-        )}
-
       </Container>
+      <Modal 
+        isOpen={modalIsOpen} 
+        onRequestClose={closeModal}
+        overlayClassName="react-modal-overlay"
+        className="react-modal-content"
+        ariaHideApp={false}
+      >
+        <RemoveMachineModal onRequestClose={closeModal} />
+      </Modal>
+      
     </>
   )
 }

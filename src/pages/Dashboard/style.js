@@ -214,6 +214,4 @@ export const CardAboutButtons = styled.div`
         }
     }
   }
-
- 
 `;

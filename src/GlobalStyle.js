@@ -34,23 +34,30 @@ button {
   font-family: 700 1.6rem Roboto;
 } 
 
-@keyframes spinner {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
+/* Estilos do Modal */
+.react-modal-overlay {
+  background: rgba(0,0,0,0.6);
+
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-#loading-spinner {
-  width: 50px;
-  height: 50px;
-  border: 10px solid #f3f3f3; /* Light grey */
-  border-top: 10px solid #383636; /* Black */
-  border-radius: 50%;
-  animation: spinner 1.5s linear infinite;
+.react-modal-content {
+  width: 100%;
+  max-width: 576px;
+  background: #fff;
+  padding: 3rem;
+  position: relative;
+  border-radius: 0.24rem;
 }
+
 
 @media (max-width: 768px) {
 
