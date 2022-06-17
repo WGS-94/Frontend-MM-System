@@ -11,11 +11,12 @@
 </p>
 
 ## Login
-<p align="center">
-  <img src="https://user-images.githubusercontent.com/87288949/173212285-fa8b5d69-3156-4251-b050-ad2d0de2c8af.PNG" alt="Login" />
-</p>
+
 <p align="center">
   <img src="https://user-images.githubusercontent.com/87288949/173212345-93dfad55-3d89-48ae-ae55-0524a6b949ea.PNG" alt="Login" />
+</p>
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/87288949/173212285-fa8b5d69-3156-4251-b050-ad2d0de2c8af.PNG" alt="Login" />
 </p>
 
 ## Register
@@ -25,6 +26,14 @@
 </p>
 
 ## Dashboard
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/87288949/174226714-fe15451b-1a20-4a8f-97ff-2a383df745b3.PNG" alt="Dashboard-Empty!" />
+</p>
+
+## Adicionar nova Máquina
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/87288949/174226712-266b7e7f-47e7-4ad7-8b9d-f0fbab614e10.PNG" alt="addMachine!" />
+</p>
 
 ## 🚀 Tecnologias
 
