@@ -97,7 +97,7 @@ function Register() {
                 className="fa fa-spinner fa-pulse fa-4x" 
                 aria-hidden="true"
                 style={{fontSize: 30, color: 'red' }}  
-              /> : 'Entrar' 
+              /> : 'Cadastrar' 
             }
           </button>
           <Link to="/">
