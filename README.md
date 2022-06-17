@@ -10,6 +10,10 @@
   <a href="#memo-licença">Licença</a>
 </p>
 
+## 💻 Projeto
+
+<!-- O Ecoleta é um marketplace que ajuda pessoas a encontrarem pontos de coleta de resíduos de forma eficiente. -->
+
 ## Login
 
 <p align="center">
@@ -31,9 +35,9 @@
 </p>
 
 ## Adicionar nova Máquina
-<p align="center">
+<!-- <p align="center">
   <img src="https://user-images.githubusercontent.com/87288949/174226712-266b7e7f-47e7-4ad7-8b9d-f0fbab614e10.PNG" alt="addMachine!" />
-</p>
+</p> -->
 
 ## 🚀 Tecnologias
 
@@ -42,10 +46,6 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 - [Node.js](https://nodejs.org/en/)
 - [React](https://reactjs.org)
 - [MongoDB](https://www.mongodb.com/)
-
-## 💻 Projeto
-
-<!-- O Ecoleta é um marketplace que ajuda pessoas a encontrarem pontos de coleta de resíduos de forma eficiente. -->
 
 ## 🔖 Layout
 
