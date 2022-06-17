@@ -3,9 +3,9 @@ import { useAuth } from "../../hooks/auth";
 
 import logoImg from '../../assets/logo.svg';
 
-import './Nav.css';
+import './style.css';
 
-function Nav() {
+function Header() {
 
   const { signOut } = useAuth();
 
@@ -31,4 +31,4 @@ function Nav() {
   )
 }
 
-export default Nav
+export default Header;

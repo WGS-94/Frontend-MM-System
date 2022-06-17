@@ -26,7 +26,6 @@ function RemoveMachineModal({ onRequestClose }) {
     <Container>
       <Button
         type="button"
-        className="react-modal-close"
         onClick={onRequestClose}
       >
         <img src={closeImg} alt="Fechar modal" />

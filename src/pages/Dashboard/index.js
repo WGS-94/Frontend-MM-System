@@ -4,7 +4,7 @@ import { useAuth } from "../../hooks/auth";
 import api from '../../services/api';
 //import { toast } from 'react-toastify';
 import Modal from 'react-modal';
-import Header from '../../components/Header/Nav';
+import Header from '../../components/Header';
 import Transition from '../../components/Transition';
 import RemoveMachineModal from '../../components/RemoveMachineModal';
 
@@ -32,7 +32,6 @@ function Dashboard() {
 
   function closeModal() {
     setIsOpen(false);
-    //setLoading(true);
     reload();
   }
 
