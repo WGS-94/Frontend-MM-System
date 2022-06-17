@@ -4,7 +4,7 @@ import { Link, useHistory } from "react-router-dom";
 import * as Yup from "yup";
 import { Form } from "@rocketseat/unform";
 import api from "../../../services/api";
-import Header from "../../../components/Header/Nav";
+import Header from "../../../components/Header";
 
 import "../AddNewMachine/style.css";
 

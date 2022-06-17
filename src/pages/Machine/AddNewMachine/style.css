@@ -1,5 +1,5 @@
 .container__newMachine {
-  padding: 20px;
+  padding: 10px;
 
   /*border: 1px solid #fff;*/
 }
@@ -11,7 +11,7 @@
 .heading__title {
   font-weight: 600;
   color: #fff;
-  margin: 2rem;
+  margin-bottom: 10px;
 }
 
 .content__newMachine {
@@ -21,7 +21,7 @@
 }
 
 .content__newMachine__fields {
-  width: 800px;
+  width: 600px;
   height: auto;
   background: #413D4F;
   border-radius: 5px;
@@ -30,7 +30,7 @@
 }
 
 .content__newMachine__fields form {
-  padding: 30px;
+  padding: 20px;
   display: flex;
   flex-direction: column;
 }
@@ -54,7 +54,7 @@
   margin-bottom: 10px;
   /*border: 1px solid #E8643A;*/
   font-size: 15px;
-  height: 42px;
+  height: 40px;
   border-radius: 6px;
   padding: 0 15px;
   background: #2C2641;
@@ -70,7 +70,7 @@
   border: 0;
   outline: 0;
   resize: none;
-  height: 8rem;
+  height: 7rem;
   padding: 1rem;
   border-radius: 6px;
   color: #eee;
@@ -135,18 +135,19 @@
 label#thumbnail {
   margin-bottom: 20px;
   border: 1px dashed #ddd;
+  background: #2C2641;
   background-size: cover;
   cursor: pointer;
-  height: 160px;
+  height: 100px;
   display: flex;
   justify-content: center;
   align-items: center;
   border-radius: 6px;
 }
 
-label#thumbnail:hover {
+/*label#thumbnail:hover {
   border: 2px dashed #E8643A;
-}
+}*/
 
 label#thumbnail input {
   display: none;
