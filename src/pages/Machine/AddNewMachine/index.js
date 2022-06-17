@@ -1,6 +1,6 @@
 import React, { useState, useMemo } from "react";
 import { Link, useHistory } from "react-router-dom";
-import { toast } from "react-toastify";
+//import { toast } from "react-toastify";
 import * as Yup from "yup";
 import { Form } from "@rocketseat/unform";
 import api from "../../../services/api";
@@ -21,63 +21,37 @@ function AddNewMachine() {
   const history = useHistory();
 
   const [machineThumbail, setMachineThumbail] = useState(null);
-  const [machineName, setMachineName] = useState("");
-  const [machineParameter, setMachineParameter] = useState("");
-  const [machineManufacture, setMachineManufacture] = useState("");
-  const [machineDescription, setMachineDescription] = useState("");
+  const [machineName, setMachineName] = useState('');
+  const [machineParameter, setMachineParameter] = useState('');
+  const [machineManufacture, setMachineManufacture] = useState('');
+  const [machineDescription, setMachineDescription] = useState('');
 
   const preview = useMemo(() => {
     return machineThumbail ? URL.createObjectURL(machineThumbail) : null;
   }, [machineThumbail]);
 
-  async function handleSubmitNewMachine({
-    machineThumbail,
-    machineName,
-    machineParameter,
-    machineManufacture,
-    machineDescription,
-  }) {
-    const response = api.post("/machines");
-    console.log(response);
+  async function handleSubmitNewMachine(event) {
 
-    if (
-      !machineThumbail ||
-      !machineName ||
-      !machineParameter ||
-      !machineManufacture ||
-      !machineDescription
-    ) {
-      return toast.error(
-        "Não foi possível cadastrar esta máquina. Preencha todos os campos corretamente!"
-      );
-    }
+    //event.preventDefault();
 
-    try {
-      const response = await api.post(
-        "/machines",
-        {
-          machineThumbail,
-          machineName,
-          machineParameter,
-          machineManufacture,
-          machineDescription,
-        },
-        {
-          headers: {
-            "Content-Type": "application/json",
-          },
-        }
-      );
+    const data = new FormData();
 
-      localStorage.setItem("@mmsystem:machineID", response.data._id);
+    const user_id = localStorage.getItem("@mmsystem:userID");
 
-      toast.success("Máquina cadastrada com sucesso");
+    data.append('machineThumbail', machineThumbail);
+    data.append('machineName', machineName);
+    data.append('machineParameter', machineParameter);
+    data.append('machineManufacture', machineManufacture);
+    data.append('machineDescription', machineDescription);
+    
+    const respo = await api.post("/machines", data, {
+      headers: { user_id}
+    });
 
-      history.push("/dashboard");
-    } catch (error) {
-      //console.log("ERRO", error);
-      return toast.error("Não foi possível cadastrar. Este usuário já existe!");
-    }
+    console.log(respo);
+
+    history.push("/dashboard");
+
   }
 
   return (
