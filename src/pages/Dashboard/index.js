@@ -20,8 +20,11 @@ function Dashboard() {
   const { user } = useAuth();
   const [data, setData] = React.useState([]);
   const [loading, setLoading] = React.useState(false);
-
   const [modalIsOpen, setIsOpen] = React.useState(false);
+
+  function reload() {
+    window.location.reload();
+  };
 
   function openModal() {
     setIsOpen(true);
@@ -29,18 +32,20 @@ function Dashboard() {
 
   function closeModal() {
     setIsOpen(false);
+    //setLoading(true);
+    reload();
   }
 
   React.useEffect(() => {
     async function loadData() {
 
-      setLoading(true)
+      setLoading(true);
 
       const user_id = localStorage.getItem("@mmsystem:userID");
 
       const response = await api.get(`/machines/user/${user_id}`);
 
-      setLoading(false)
+      setLoading(false);
 
       //console.log(response.data.machines)
 
@@ -50,23 +55,6 @@ function Dashboard() {
     loadData();
     
   }, []);
-
-  async function saveMachineIDToLocalStorage(id) {
-    try {
-      /*const user_id = localStorage.getItem("@mmsystem:userID");
-
-      const response = await api.get(`/machines/user/${user_id}`);*/
-
-      const newData = data.map(f => f._id === id)
-
-      console.log(newData)
-
-      //localStorage.setItem("@mmsystem:machineID", response.data.machines._id);
-
-    } catch (err) {
-      return undefined;
-    }
-  };
 
   return (
     <>
@@ -120,7 +108,10 @@ function Dashboard() {
                       <button className='btn1'>Editar</button>
                       <button 
                         className='btn2'
-                        onClick={() => {saveMachineIDToLocalStorage(); openModal()}}
+                        onClick={() => {
+                          openModal()
+                          localStorage.setItem("@mmsystem:machineID", machine._id)
+                        }}
                       >
                         Excluir
                       </button>
@@ -143,8 +134,9 @@ function Dashboard() {
         overlayClassName="react-modal-overlay"
         className="react-modal-content"
         ariaHideApp={false}
+        onHide={reload}
       >
-        <RemoveMachineModal onRequestClose={closeModal} />
+        <RemoveMachineModal onExit={reload} onRequestClose={closeModal} />
       </Modal>
       
     </>
