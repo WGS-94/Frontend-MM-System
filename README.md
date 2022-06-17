@@ -13,11 +13,11 @@
 ## Login
 
 <p align="center">
-  <img src="https://user-images.githubusercontent.com/87288949/174227412-b50e3904-c248-40fc-9197-148099fb9c95.PNG" alt="Error-Login" />
+  <img src="https://user-images.githubusercontent.com/87288949/174227850-f9135051-cc9c-4e31-8c5d-c402b96ca5f5.PNG" alt="Error-Login" />
 </p>
-<p align="center">
+<!-- <p align="center">
   <img src="https://user-images.githubusercontent.com/87288949/174227414-53f79ebe-c3da-474e-b2ad-fd9a026c7c37.PNG" alt="Login" />
-</p>
+</p> -->
 
 ## Register
 
