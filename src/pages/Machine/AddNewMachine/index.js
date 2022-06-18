@@ -2,11 +2,13 @@ import React, { useState, useMemo } from "react";
 import { Link, useHistory } from "react-router-dom";
 //import { toast } from "react-toastify";
 import * as Yup from "yup";
-import { Form } from "@rocketseat/unform";
+import { Form, Input, Textarea } from "@rocketseat/unform";
 import api from "../../../services/api";
 import Header from "../../../components/Header";
 
-import "../AddNewMachine/style.css";
+/*import "../AddNewMachine/style.css";*/
+import { ContainerNewMachine, Heading, ContentNewMachine,
+         ContentNewMachineFields, LabelFile } from "./style";
 
 
 const Schema = Yup.object().shape({
@@ -57,49 +59,52 @@ function AddNewMachine() {
   return (
     <>
       <Header />
-      <div className="container__newMachine">
-        <div className="heading">
-          <h1 className="heading__title">Cadastro de uma nova Máquina</h1>
-        </div>
-        <div className="content__newMachine">
-          <div className="content__newMachine__fields">
+      <ContainerNewMachine>
+        <Heading>
+          <h1>Cadastro de uma nova Máquina</h1>
+        </Heading>
+        <ContentNewMachine>
+          <ContentNewMachineFields>
             <Form schema={Schema} onSubmit={handleSubmitNewMachine}>
-              <label
+              <LabelFile
                 id="thumbnail"
                 style={{ backgroundImage: `url(${preview})` }}
                 className={machineThumbail ? "has-thumbnail" : ""}
               >
                 <span>Clique ou arraste o arquivo!</span>
-                <input
+                <Input
                   type="file"
+                  name="thumbnail"
                   onChange={(event) =>
                     setMachineThumbail(event.target.files[0])
                   }
                 />
-              </label>
-              <label htmlFor="machineName">Nome da Máquina: </label>
-              <input
+              </LabelFile>
+              <Input
+                placeholder="Nome da Máquina"
                 type="text"
+                name="machineName"
                 id="machineName"
                 value={machineName}
                 onChange={(event) => setMachineName(event.target.value)}
               />
-              <label htmlFor="machineParameter">Parâmetros</label>
-              <input
+              <Input
+                placeholder="Parâmetros"
                 type="text"
+                name="machineParameter"
                 id="machineParameter"
                 value={machineParameter}
                 onChange={(event) => setMachineParameter(event.target.value)}
               />
-              <label htmlFor="">Fabricante</label>
-              <input
+              <Input
+                placeholder="Fabricante"
                 type="text"
+                name="machineManufacture"
                 id="machineManufacture"
                 value={machineManufacture}
                 onChange={(event) => setMachineManufacture(event.target.value)}
               />
-              <label htmlFor="machineDescription">Descrição</label>
-              <textarea
+              <Textarea
                 placeholder="Digite uma descrição da máquina"
                 name="machineDescription"
                 id="machineDescription"
@@ -115,9 +120,9 @@ function AddNewMachine() {
                 </button>
               </div>
             </Form>
-          </div>
-        </div>
-      </div>
+          </ContentNewMachineFields>
+        </ContentNewMachine>
+      </ContainerNewMachine>
     </>
   );
 }

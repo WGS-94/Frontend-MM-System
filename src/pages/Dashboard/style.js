@@ -127,10 +127,14 @@ export const CardAbout = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  box-sizing: border-box;
+
+  /*border: 1px solid #fff;*/
 `;
 
 export const CardAboutMachine = styled.div`
   width: 100%;
+  box-sizing: border-box;
 
   /*border: 1px solid #fff;*/
 
