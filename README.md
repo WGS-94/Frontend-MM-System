@@ -42,6 +42,8 @@
   <img src="https://user-images.githubusercontent.com/87288949/174423667-dfdf11ac-32b1-459d-8338-a78cacd90366.PNG" alt="addMachine!" />
 </p>
 
+## Máquina Criada
+
 ## 🚀 Tecnologias
 
 Esse projeto foi desenvolvido com as seguintes tecnologias:
