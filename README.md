@@ -41,8 +41,14 @@
 <p align="center">
   <img src="https://user-images.githubusercontent.com/87288949/174423667-dfdf11ac-32b1-459d-8338-a78cacd90366.PNG" alt="addMachine!" />
 </p>
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/87288949/174423888-90aa320a-23ca-410f-9e16-b69672af43ac.PNG" alt="addMachine!" />
+</p>
 
 ## Máquina Criada
+<!-- <p align="center">
+  <img src="https://user-images.githubusercontent.com/87288949/174423888-90aa320a-23ca-410f-9e16-b69672af43ac.PNG" alt="addMachine!" />
+</p> -->
 
 ## 🚀 Tecnologias
 
