@@ -83,7 +83,7 @@ function AddNewMachine() {
                 className={thumbnail ? "has-thumbnail" : ""}
               >
                 <span>Clique ou arraste o arquivo!</span>
-                <input
+                <Input
                   type="file"
                   name="thumbnail"
                   onChange={(event) =>
@@ -124,12 +124,11 @@ function AddNewMachine() {
               />
               <SaveMachine>
                 <IsActiveButtons>
-                  {/*<label htmlFor="ativo">
-                    <input type="radio" name="ativo" id="ativo" />Ativo
-                  </label>
-                  <label htmlFor="desativo">
-                    <input type="radio" name="desativo" id="desativo"/>Desativo
-                  </label>*/}
+                  <input type="radio" id="ativo" name="radioActive" value={true} />
+                  <label for="ativo">Ativo</label>
+
+                  <input type="radio" id="desativo" name="radioActive" value={false} />
+                  <label for="desativo">Desativo</label>
                 </IsActiveButtons>
                 <BtnSaveMachine>
                   <Link to="/dashboard" className="btnBack" type="Link">

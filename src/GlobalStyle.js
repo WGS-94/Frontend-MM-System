@@ -67,7 +67,6 @@ button {
   color: #fff;
 }
 
-
 @media (max-width: 768px) {
 
 html {

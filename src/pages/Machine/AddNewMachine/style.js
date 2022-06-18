@@ -152,7 +152,7 @@ export const BtnSaveMachine = styled.div`
     font-size: 16px;
     height: 42px;
     background: #E8643A;
-    border-radius: 6px;
+    border-radius: 5px;
     border: 0;
     color: #fff;
     cursor: pointer;
@@ -166,33 +166,48 @@ export const BtnSaveMachine = styled.div`
 `;
 
 export const IsActiveButtons = styled.div`
-  /*display: flex;
+  /*border: 1px solid #fff;*/
+  display: flex;
   justify-content: center;
   align-items: center;
   gap: 2rem;
 
-  input[type=""] {
+  input[type="radio"] {
+    opacity: 0;
+    position: fixed;
+    width: 0;
+    height: 42px;
+    cursor: pointer;
 
-    
+    /*&:focus + label {
+      border: 2px solid #E8643A;
+    }*/
+
+    &:checked + label {
+      border: 1px solid #E8643A;
+      color: #fff;
+      /*background-color: #bfb;
+      border-color: #4c4;*/
+    }
+  }
+
+  label {
+    display: inline-block;
+    background-color: #2C2641;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    text-align: center;
+    font-weight: bold;
     width: 120px;
     margin-top: 10px;
-    font-size: 16px;
     height: 42px;
-    background: #2C2641;
-    border-radius: 6px;
-    border: 0;
     color: #666;
-    cursor: pointer;
-    font-weight: bold;
 
-    &:hover {
-      border: 1px solid #963a1e;
-      color: #fff;
-    }
+    /*&:hover {
+      background-color: #dfd;
+    }*/
+  }
 
-    &:active {
-      border: 1px solid #963a1e;
-      color: #fff;
-    }
-  }*/
 `;
