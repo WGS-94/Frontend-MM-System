@@ -108,11 +108,20 @@ export const LabelFile = styled.label`
 `;
 
 
-export const BtnSaveMachine = styled.label`
+export const SaveMachine = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+ 
+`;
+
+export const BtnSaveMachine = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 2rem;
+
 
   a {
     width: 120px;
@@ -154,4 +163,36 @@ export const BtnSaveMachine = styled.label`
       color: #fff;
     }
   }
+`;
+
+export const IsActiveButtons = styled.div`
+  /*display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+
+  input[type=""] {
+
+    
+    width: 120px;
+    margin-top: 10px;
+    font-size: 16px;
+    height: 42px;
+    background: #2C2641;
+    border-radius: 6px;
+    border: 0;
+    color: #666;
+    cursor: pointer;
+    font-weight: bold;
+
+    &:hover {
+      border: 1px solid #963a1e;
+      color: #fff;
+    }
+
+    &:active {
+      border: 1px solid #963a1e;
+      color: #fff;
+    }
+  }*/
 `;

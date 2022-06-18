@@ -61,6 +61,12 @@ button {
 .has-thumbnail { border: 0; }
 .has-thumbnail span { display: none; }
 
+.active{
+  background: red;
+  border: 2px solid #963a1e;
+  color: #fff;
+}
+
 
 @media (max-width: 768px) {
 

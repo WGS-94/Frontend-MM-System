@@ -2,54 +2,57 @@ import React, { useState, useMemo } from "react";
 import { Link, useHistory } from "react-router-dom";
 import { toast } from "react-toastify";
 import * as Yup from "yup";
-import { Form, Input, Textarea } from "@rocketseat/unform";
+import { Form, Input } from "@rocketseat/unform";
 import api from "../../../services/api";
 import Header from "../../../components/Header";
 
 /*import "../AddNewMachine/style.css";*/
 import { ContainerNewMachine, Heading, ContentNewMachine,
-         ContentNewMachineFields, LabelFile, BtnSaveMachine } from "./style";
+         ContentNewMachineFields, LabelFile, BtnSaveMachine,
+         SaveMachine, IsActiveButtons } from "./style";
 
 
 const Schema = Yup.object().shape({
   /*machineThumbnail: Yup.files(),*/
-  machineName: Yup.string(),
-  machineParameter: Yup.string(),
-  machineManufacture: Yup.string(),
-  machineDescription: Yup.string(),
+  name: Yup.string(),
+  parameter: Yup.string(),
+  manufacturer: Yup.string(),
+  description: Yup.string(),
 });
 
 function AddNewMachine() {
   const history = useHistory();
 
-  const [machineThumbnail, setMachineThumbnail] = useState(null);
-  const [machineName, setMachineName] = useState('');
-  const [machineParameter, setMachineParameter] = useState('');
-  const [machineManufacture, setMachineManufacture] = useState('');
-  const [machineDescription, setMachineDescription] = useState('');
+  const [thumbnail, setThumbnail] = useState(null);
+  const [name, setName] = useState('');
+  const [parameter, setParameter] = useState('');
+  const [manufacturer, setManufacturer] = useState('');
+  const [description, setDescription] = useState('');
+
+  //const [checked, setChecked] = useState(false);
 
   const preview = useMemo(() => {
-    return machineThumbnail ? URL.createObjectURL(machineThumbnail) : null;
-  }, [machineThumbnail]);
+    return thumbnail ? URL.createObjectURL(thumbnail) : null;
+  }, [thumbnail]);
 
   async function handleSubmitNewMachine(event) {
 
-    //event.preventDefault();
-
-    try {
+   // event.preventDefault();
 
       const data = new FormData();
 
       const user_id = localStorage.getItem("@mmsystem:userID");
 
-      data.append('machineThumbnail', machineThumbnail);
-      data.append('machineName', machineName);
-      data.append('machineParameter', machineParameter);
-      data.append('machineManufacture', machineManufacture);
-      data.append('machineDescription', machineDescription);
+      data.append('thumbnail', thumbnail);
+      data.append('name', name);
+      data.append('parameter', parameter);
+      data.append('manufacturer', manufacturer);
+      data.append('description', description);
+
+      //console.log(data, user_id);
       
       const respo = await api.post("/machines", data, {
-        headers: { user_id}
+        headers: { user_id }
       });
 
       console.log(respo);
@@ -57,8 +60,8 @@ function AddNewMachine() {
       toast.success("Usuário cadastrado com sucesso");
 
       history.push("/dashboard");
-      
-    } catch (error) {
+    
+      try {} catch (error) {
       return toast.error("Não foi possível cadastrar. Este usuário já existe!");
     }
 
@@ -77,56 +80,66 @@ function AddNewMachine() {
               <LabelFile
                 id="thumbnail"
                 style={{ backgroundImage: `url(${preview})` }}
-                className={machineThumbnail ? "has-thumbnail" : ""}
+                className={thumbnail ? "has-thumbnail" : ""}
               >
                 <span>Clique ou arraste o arquivo!</span>
-                <Input
+                <input
                   type="file"
                   name="thumbnail"
                   onChange={(event) =>
-                    setMachineThumbnail(event.target.files[0])
+                    setThumbnail(event.target.files[0])
                   }
                 />
               </LabelFile>
               <Input
                 placeholder="Nome da Máquina"
                 type="text"
-                name="machineName"
-                id="machineName"
-                value={machineName}
-                onChange={(event) => setMachineName(event.target.value)}
+                name="name"
+                id="name"
+                value={name}
+                onChange={(event) => setName(event.target.value)}
               />
               <Input
                 placeholder="Parâmetros"
                 type="text"
-                name="machineParameter"
-                id="machineParameter"
-                value={machineParameter}
-                onChange={(event) => setMachineParameter(event.target.value)}
+                name="parameter"
+                id="parameter"
+                value={parameter}
+                onChange={(event) => setParameter(event.target.value)}
               />
               <Input
                 placeholder="Fabricante"
                 type="text"
-                name="machineManufacture"
-                id="machineManufacture"
-                value={machineManufacture}
-                onChange={(event) => setMachineManufacture(event.target.value)}
+                name="manufacturer"
+                id="manufacturer"
+                value={manufacturer}
+                onChange={(event) => setManufacturer(event.target.value)}
               />
-              <Textarea
+              <textarea
                 placeholder="Digite uma descrição da máquina"
-                name="machineDescription"
-                id="machineDescription"
-                value={machineDescription}
-                onChange={(event) => setMachineDescription(event.target.value)}
+                name="description"
+                id="description"
+                value={description}
+                onChange={(event) => setDescription(event.target.value)}
               />
-              <BtnSaveMachine>
-                <Link to="/dashboard" className="btnBack" type="Link">
-                  Voltar
-                </Link>
-                <button className="btnRegister" type="submit">
-                  Cadastrar
-                </button>
-              </BtnSaveMachine>
+              <SaveMachine>
+                <IsActiveButtons>
+                  {/*<label htmlFor="ativo">
+                    <input type="radio" name="ativo" id="ativo" />Ativo
+                  </label>
+                  <label htmlFor="desativo">
+                    <input type="radio" name="desativo" id="desativo"/>Desativo
+                  </label>*/}
+                </IsActiveButtons>
+                <BtnSaveMachine>
+                  <Link to="/dashboard" className="btnBack" type="Link">
+                    Voltar
+                  </Link>
+                  <button type="submit">
+                    Cadastrar
+                  </button>
+                </BtnSaveMachine>
+              </SaveMachine>
             </Form>
           </ContentNewMachineFields>
         </ContentNewMachine>
