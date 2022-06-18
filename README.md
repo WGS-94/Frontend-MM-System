@@ -10,21 +10,34 @@
   <a href="#memo-licença">Licença</a>
 </p>
 
+## 💻 Projeto
+
+<!-- O Ecoleta é um marketplace que ajuda pessoas a encontrarem pontos de coleta de resíduos de forma eficiente. -->
+
 ## Login
+
 <p align="center">
-  <img src="https://user-images.githubusercontent.com/87288949/173212285-fa8b5d69-3156-4251-b050-ad2d0de2c8af.PNG" alt="Login" />
+  <img src="https://user-images.githubusercontent.com/87288949/174227850-f9135051-cc9c-4e31-8c5d-c402b96ca5f5.PNG" alt="Error-Login" />
 </p>
-<p align="center">
-  <img src="https://user-images.githubusercontent.com/87288949/173212345-93dfad55-3d89-48ae-ae55-0524a6b949ea.PNG" alt="Login" />
-</p>
+<!-- <p align="center">
+  <img src="https://user-images.githubusercontent.com/87288949/174227414-53f79ebe-c3da-474e-b2ad-fd9a026c7c37.PNG" alt="Login" />
+</p> -->
 
 ## Register
 
 <p align="center">
-  <img src="https://user-images.githubusercontent.com/87288949/173212286-de2d3193-41ee-49e6-a6b3-2744ee896112.PNG" alt="Register!" />
+  <img src="https://user-images.githubusercontent.com/87288949/174227417-c028926c-4759-4071-ac34-c0906c2b7b3d.PNG" alt="Register!" />
 </p>
 
 ## Dashboard
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/87288949/174226714-fe15451b-1a20-4a8f-97ff-2a383df745b3.PNG" alt="Dashboard-Empty!" />
+</p>
+
+## Adicionar nova Máquina
+<!-- <p align="center">
+  <img src="https://user-images.githubusercontent.com/87288949/174226712-266b7e7f-47e7-4ad7-8b9d-f0fbab614e10.PNG" alt="addMachine!" />
+</p> -->
 
 ## 🚀 Tecnologias
 
@@ -33,10 +46,6 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 - [Node.js](https://nodejs.org/en/)
 - [React](https://reactjs.org)
 - [MongoDB](https://www.mongodb.com/)
-
-## 💻 Projeto
-
-<!-- O Ecoleta é um marketplace que ajuda pessoas a encontrarem pontos de coleta de resíduos de forma eficiente. -->
 
 ## 🔖 Layout
 
