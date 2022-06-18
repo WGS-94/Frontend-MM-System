@@ -1,6 +1,6 @@
 import React, { useState, useMemo } from "react";
 import { Link, useHistory } from "react-router-dom";
-//import { toast } from "react-toastify";
+import { toast } from "react-toastify";
 import * as Yup from "yup";
 import { Form, Input, Textarea } from "@rocketseat/unform";
 import api from "../../../services/api";
@@ -8,11 +8,11 @@ import Header from "../../../components/Header";
 
 /*import "../AddNewMachine/style.css";*/
 import { ContainerNewMachine, Heading, ContentNewMachine,
-         ContentNewMachineFields, LabelFile } from "./style";
+         ContentNewMachineFields, LabelFile, BtnSaveMachine } from "./style";
 
 
 const Schema = Yup.object().shape({
-  /*machineThumbail: Yup.files(),*/
+  /*machineThumbnail: Yup.files(),*/
   machineName: Yup.string(),
   machineParameter: Yup.string(),
   machineManufacture: Yup.string(),
@@ -22,37 +22,45 @@ const Schema = Yup.object().shape({
 function AddNewMachine() {
   const history = useHistory();
 
-  const [machineThumbail, setMachineThumbail] = useState(null);
+  const [machineThumbnail, setMachineThumbnail] = useState(null);
   const [machineName, setMachineName] = useState('');
   const [machineParameter, setMachineParameter] = useState('');
   const [machineManufacture, setMachineManufacture] = useState('');
   const [machineDescription, setMachineDescription] = useState('');
 
   const preview = useMemo(() => {
-    return machineThumbail ? URL.createObjectURL(machineThumbail) : null;
-  }, [machineThumbail]);
+    return machineThumbnail ? URL.createObjectURL(machineThumbnail) : null;
+  }, [machineThumbnail]);
 
   async function handleSubmitNewMachine(event) {
 
     //event.preventDefault();
 
-    const data = new FormData();
+    try {
 
-    const user_id = localStorage.getItem("@mmsystem:userID");
+      const data = new FormData();
 
-    data.append('machineThumbail', machineThumbail);
-    data.append('machineName', machineName);
-    data.append('machineParameter', machineParameter);
-    data.append('machineManufacture', machineManufacture);
-    data.append('machineDescription', machineDescription);
-    
-    const respo = await api.post("/machines", data, {
-      headers: { user_id}
-    });
+      const user_id = localStorage.getItem("@mmsystem:userID");
 
-    console.log(respo);
+      data.append('machineThumbnail', machineThumbnail);
+      data.append('machineName', machineName);
+      data.append('machineParameter', machineParameter);
+      data.append('machineManufacture', machineManufacture);
+      data.append('machineDescription', machineDescription);
+      
+      const respo = await api.post("/machines", data, {
+        headers: { user_id}
+      });
 
-    history.push("/dashboard");
+      console.log(respo);
+
+      toast.success("Usuário cadastrado com sucesso");
+
+      history.push("/dashboard");
+      
+    } catch (error) {
+      return toast.error("Não foi possível cadastrar. Este usuário já existe!");
+    }
 
   }
 
@@ -69,14 +77,14 @@ function AddNewMachine() {
               <LabelFile
                 id="thumbnail"
                 style={{ backgroundImage: `url(${preview})` }}
-                className={machineThumbail ? "has-thumbnail" : ""}
+                className={machineThumbnail ? "has-thumbnail" : ""}
               >
                 <span>Clique ou arraste o arquivo!</span>
                 <Input
                   type="file"
                   name="thumbnail"
                   onChange={(event) =>
-                    setMachineThumbail(event.target.files[0])
+                    setMachineThumbnail(event.target.files[0])
                   }
                 />
               </LabelFile>
@@ -111,14 +119,14 @@ function AddNewMachine() {
                 value={machineDescription}
                 onChange={(event) => setMachineDescription(event.target.value)}
               />
-              <div className="btn__save__Machine">
+              <BtnSaveMachine>
                 <Link to="/dashboard" className="btnBack" type="Link">
                   Voltar
                 </Link>
                 <button className="btnRegister" type="submit">
                   Cadastrar
                 </button>
-              </div>
+              </BtnSaveMachine>
             </Form>
           </ContentNewMachineFields>
         </ContentNewMachine>

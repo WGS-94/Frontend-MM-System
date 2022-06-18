@@ -42,7 +42,7 @@ function Register() {
       }
       );
 
-      console.log('data', name, email, password)
+     // console.log('data', name, email, password)
 
       localStorage.setItem("@mmsystem:userID", response.data._id);
 

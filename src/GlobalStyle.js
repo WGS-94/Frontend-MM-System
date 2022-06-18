@@ -58,6 +58,9 @@ button {
   border-radius: 0.24rem;
 }
 
+.has-thumbnail { border: 0; }
+.has-thumbnail span { display: none; }
+
 
 @media (max-width: 768px) {
 
