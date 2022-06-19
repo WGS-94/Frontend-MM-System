@@ -33,10 +33,21 @@
 <p align="center">
   <img src="https://user-images.githubusercontent.com/87288949/174226714-fe15451b-1a20-4a8f-97ff-2a383df745b3.PNG" alt="Dashboard-Empty!" />
 </p>
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/87288949/174423668-18748c8e-0945-4693-b357-3bd5ebe634f8.PNG" alt="Dashboard-Empty!" />
+</p>
 
 ## Adicionar nova Máquina
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/87288949/174423667-dfdf11ac-32b1-459d-8338-a78cacd90366.PNG" alt="addMachine!" />
+</p>
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/87288949/174423888-90aa320a-23ca-410f-9e16-b69672af43ac.PNG" alt="addMachine!" />
+</p>
+
+## Máquina Criada
 <!-- <p align="center">
-  <img src="https://user-images.githubusercontent.com/87288949/174226712-266b7e7f-47e7-4ad7-8b9d-f0fbab614e10.PNG" alt="addMachine!" />
+  <img src="https://user-images.githubusercontent.com/87288949/174423888-90aa320a-23ca-410f-9e16-b69672af43ac.PNG" alt="addMachine!" />
 </p> -->
 
 ## 🚀 Tecnologias
