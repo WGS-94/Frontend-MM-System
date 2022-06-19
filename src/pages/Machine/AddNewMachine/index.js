@@ -28,12 +28,17 @@ function AddNewMachine() {
   const [parameter, setParameter] = useState('');
   const [manufacturer, setManufacturer] = useState('');
   const [description, setDescription] = useState('');
-
-  //const [checked, setChecked] = useState(false);
+  const [status, setStatus] = useState('');
 
   const preview = useMemo(() => {
     return thumbnail ? URL.createObjectURL(thumbnail) : null;
   }, [thumbnail]);
+
+  function handleStatusChange(event) {
+    setStatus(event.target.value);
+  }
+
+  //console.log('status', status)
 
   async function handleSubmitNewMachine(event) {
 
@@ -48,8 +53,10 @@ function AddNewMachine() {
       data.append('parameter', parameter);
       data.append('manufacturer', manufacturer);
       data.append('description', description);
+      data.append('status', status);
 
-      //console.log(data, user_id);
+
+      console.log(data, user_id);
       
       const respo = await api.post("/machines", data, {
         headers: { user_id }
@@ -123,12 +130,21 @@ function AddNewMachine() {
                 onChange={(event) => setDescription(event.target.value)}
               />
               <SaveMachine>
-                <IsActiveButtons>
-                  <input type="radio" id="ativo" name="radioActive" value={true} />
-                  <label for="ativo">Ativo</label>
-
-                  <input type="radio" id="desativo" name="radioActive" value={false} />
-                  <label for="desativo">Desativo</label>
+                <IsActiveButtons onChange={handleStatusChange}>
+                  <input 
+                    type="radio" 
+                    id="ativo" 
+                    name="radioActive" 
+                    value={true}
+                    />
+                  <label htmlFor="ativo">Ativo</label>
+                  <input 
+                    type="radio" 
+                    id="desativo" 
+                    name="radioActive" 
+                    value={false} 
+                    />
+                  <label htmlFor="desativo">Desativo</label>
                 </IsActiveButtons>
                 <BtnSaveMachine>
                   <Link to="/dashboard" className="btnBack" type="Link">
