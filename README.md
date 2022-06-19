@@ -29,7 +29,7 @@
   <img src="https://user-images.githubusercontent.com/87288949/174227417-c028926c-4759-4071-ac34-c0906c2b7b3d.PNG" alt="Register!" />
 </p>
 
-## Dashboard
+## Dashboard - Nemhuma máquina cadastrada
 <p align="center">
   <img src="https://user-images.githubusercontent.com/87288949/174226714-fe15451b-1a20-4a8f-97ff-2a383df745b3.PNG" alt="Dashboard-Empty!" />
 </p>
@@ -46,8 +46,18 @@
 </p>
 
 ## Máquina Criada
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/87288949/174463309-e1a4ae63-0e53-4df9-9c8d-31608ca41bf9.PNG" alt="addedMachine!" />
+</p>
+
+## Remover Máquina
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/87288949/174463308-4e0c46f3-156b-4f12-b07e-a76ee16029f5.PNG" alt="addMachine!" />
+</p>
+
+## Dashboard - Máquinas cadastradas
 <!-- <p align="center">
-  <img src="https://user-images.githubusercontent.com/87288949/174423888-90aa320a-23ca-410f-9e16-b69672af43ac.PNG" alt="addMachine!" />
+  <img src="https://user-images.githubusercontent.com/87288949/174463308-4e0c46f3-156b-4f12-b07e-a76ee16029f5.PNG" alt="addMachine!" />
 </p> -->
 
 ## 🚀 Tecnologias
