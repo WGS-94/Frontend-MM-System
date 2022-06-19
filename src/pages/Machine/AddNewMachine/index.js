@@ -6,7 +6,6 @@ import { Form, Input } from "@rocketseat/unform";
 import api from "../../../services/api";
 import Header from "../../../components/Header";
 
-/*import "../AddNewMachine/style.css";*/
 import { ContainerNewMachine, Heading, ContentNewMachine,
          ContentNewMachineFields, LabelFile, BtnSaveMachine,
          SaveMachine, IsActiveButtons } from "./style";
@@ -54,22 +53,21 @@ function AddNewMachine() {
       data.append('manufacturer', manufacturer);
       data.append('description', description);
       data.append('status', status);
-
-
-      console.log(data, user_id);
       
-      const respo = await api.post("/machines", data, {
+      const response = await api.post("/machines", data, {
         headers: { user_id }
       });
 
-      console.log(respo);
+      console.log(response);
 
-      toast.success("Usuário cadastrado com sucesso");
+      localStorage.setItem("@mmsystem:machineID", response.data.machine._id);
+
+      toast.success("Máquina cadastrada com sucesso");
 
       history.push("/dashboard");
     
       try {} catch (error) {
-      return toast.error("Não foi possível cadastrar. Este usuário já existe!");
+      return toast.error("Não foi possível cadastrar esta máquina!");
     }
 
   }

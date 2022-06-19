@@ -92,7 +92,7 @@ function Dashboard() {
                   <img src={machine.thumbnail_url} alt="machine" />
                 <CardAbout>
                   <CardAboutMachine>
-                    <h2><b>Nome:</b> {machine.machineName}</h2>
+                    <h2><b>Nome:</b> {machine.name}</h2>
                     <h2><b>Parâmetros:</b> {machine.parameter}</h2>
                     <h2><b>Fabricante:</b> {machine.manufacturer}</h2>
                     <h2><b>Descrição:</b> {machine.description}</h2>
