@@ -43,6 +43,10 @@ function AddNewMachine() {
 
    // event.preventDefault();
 
+    if (!thumbnail || !name || !parameter || !manufacturer || !description || !status) {
+      return toast.error("Não foi possível cadastrar esta máquina. Verifique se os campos estão todos preenchidos!");
+    }
+
       const data = new FormData();
 
       const user_id = localStorage.getItem("@mmsystem:userID");

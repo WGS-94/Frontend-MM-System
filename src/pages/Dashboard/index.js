@@ -105,7 +105,16 @@ function Dashboard() {
                   <CardAboutButtons>
                     <span></span>
                     <div>
-                      <button className='btn1'>Editar</button>
+                      <Link to="/edit-a-machine">
+                        <button 
+                          className='btn1'
+                          onClick={() => {
+                            localStorage.setItem("@mmsystem:machineID", machine._id)
+                          }}
+                        >
+                          Editar
+                        </button>
+                      </Link>
                       <button 
                         className='btn2'
                         onClick={() => {
