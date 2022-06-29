@@ -4,7 +4,7 @@ import { toast } from "react-toastify";
 import * as Yup from "yup";
 import { Form, Input } from "@rocketseat/unform";
 import api from "../../../services/api";
-//import { useParams } from "react-router-dom";
+
 import Header from "../../../components/Header";
 
 import { ContainerNewMachine, Heading, ContentNewMachine,
@@ -39,23 +39,26 @@ function EditAMachine() {
     setStatus(event.target.value);
   }
 
-  //const { id } = useParams();
+  console.log(name)
 
   useEffect(() => {
     async function getMachine() {
       setLoading(true);
 
       const machine_id = localStorage.getItem("@mmsystem:machineID");
-      var response = await api.get(`machines/${machine_id}`);
-      
-      console.log('Máquina: ', response.data.machine)
 
-      //setThumbnail(response.data.machine.thumbnail);
-      setName(response.data.machine.name);
+      var response = await api.get(`machines/${machine_id}`);
+
+      const newData = response.data.machine;
+
+      console.log('Máquina: ', newData.status)
+
+      /*setThumbnail(response.data.machine.thumbnail_url);
+      setName(response.data.machine.machineName);
       setParameter(response.data.machine.parameter);
       setManufacturer(response.data.machine.manufacturer);
       setDescription(response.data.machine.description);
-      setStatus(response.data.machine.status);
+      setStatus(response.data.machine.status);*/
       setLoading(false);
     }
     getMachine();
@@ -171,7 +174,7 @@ function EditAMachine() {
                     Voltar
                   </Link>
                   <button type="submit">
-                    Cadastrar
+                    Atualizar
                   </button>
                 </BtnSaveMachine>
               </SaveMachine>

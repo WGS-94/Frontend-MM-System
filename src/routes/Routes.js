@@ -17,7 +17,7 @@ export default function Routes() {
          <Route path="/register" component={Register} />
          <Route path="/dashboard" component={Dashboard} isPrivate />
          <Route path="/add-new-machine" component={AddNewMachine} isPrivate />
-         <Route path="/edit-a-machine" component={EditAMachine} isPrivate />
+         <Route path="/edit-a-machine/:machine_id" component={EditAMachine} isPrivate />
        </Switch>
     </Router>
   )

@@ -105,7 +105,7 @@ function Dashboard() {
                   <CardAboutButtons>
                     <span></span>
                     <div>
-                      <Link to="/edit-a-machine">
+                      <Link to={`/edit-a-machine/${machine._id}`}>
                         <button 
                           className='btn1'
                           onClick={() => {
