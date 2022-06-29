@@ -87,22 +87,22 @@ export const Cards = styled.div`
   display: grid;
   grid-template-columns: repeat(2, 1fr);
 
-  @media (max-width: 800px) {
+  @media (max-width: 920px) {
     grid-template-columns:  1fr; 
   }
 `;
 
 export const Card = styled.div`
   padding: 2rem;
-  height: 30rem;
+  height: 28rem;
   background: #413D4F;
   border-radius: 10px;
   box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.25);
   transition: all 0.2s;
 
-  /*@media (max-width: 768px) {
+  @media (max-width: 768px) {
     height: auto;
-  }*/
+  }
 
 `;
 
@@ -115,9 +115,9 @@ export const  CardContent = styled.div`
   > img {
     //width: calc(24rem + 15px);
     //height: calc(20rem + 2px);
-    height: 100%;
     max-width: 100%;
     width: 40%;
+    height: 100%;
     object-fit: cover;
     border-radius: 8px;
     border: 2px solid #fff;
@@ -141,9 +141,9 @@ export const CardAboutMachine = styled.div`
   width: 100%;
   box-sizing: border-box;
 
-  border: 1px solid #fff;
+  //border: 1px solid #fff;
 
-  h2 {
+  p {
     margin-bottom: 2px;
     color: #b9b9b9;
     font-size: 2.2vmin;
@@ -152,16 +152,6 @@ export const CardAboutMachine = styled.div`
   b {
     color: #ffffff;
     font-size: 2.2vmin;
-  }
-
-  @media (max-width: 1480px) {
-    h2 {
-      font-size: 1rem;
-    }
-
-    h2 {
-      font-size: 1rem;
-    }
   }
 `;
 
@@ -192,6 +182,13 @@ export const CardStatus = styled.div`
 
   span.red {
     background: red;
+  }
+
+  @media (max-width: 768px) {
+    span {
+      height: 8px;
+      width: 8px;
+    }
   }
 `;
 

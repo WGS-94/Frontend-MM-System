@@ -93,10 +93,10 @@ function Dashboard() {
                   <img src={machine.thumbnail_url} alt="machine" />
                 <CardAbout>
                   <CardAboutMachine>
-                    <h2><b>Nome:</b> {machine.name}</h2>
-                    <h2><b>Parâmetros:</b> {machine.parameter}</h2>
-                    <h2><b>Fabricante:</b> {machine.manufacturer}</h2>
-                    <h2><b>Descrição:</b> {machine.description}</h2>
+                    <p><b>Nome:</b> {machine.name}</p>
+                    <p><b>Parâmetros:</b> {machine.parameter}</p>
+                    <p><b>Fabricante:</b> {machine.manufacturer}</p>
+                    <p><b>Descrição:</b> {machine.description}</p>
                     <CardStatus>
                       <b>{machine.status === true ? "Ativo" : "Inativo"}</b>
                       <span className={ machine.status === true ? "green" : "red"}></span>
