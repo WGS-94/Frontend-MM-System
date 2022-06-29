@@ -23,17 +23,16 @@ body {
 }
 
 body::-webkit-scrollbar {
-  width: 8px;               /* width of the entire scrollbar */
+  width: 5px;
 }
 
 body::-webkit-scrollbar-track {
-  background: #2C2641;        /* color of the tracking area */
+  background: #2C2641;        
 }
 
 body::-webkit-scrollbar-thumb {
-  background: #E8643A;     /* color of the scroll thumb */
-  border-radius: 20px;       /* roundness of the scroll thumb */
-  border: 3px solid #E8643A;  /* creates padding around scroll thumb */
+  background: #E8643A;     
+  border-radius: 10px;
 }
 
 :focus {
