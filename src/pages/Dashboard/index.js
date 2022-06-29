@@ -33,6 +33,7 @@ function Dashboard() {
   function closeModal() {
     setIsOpen(false);
     reload();
+    
   }
 
   React.useEffect(() => {

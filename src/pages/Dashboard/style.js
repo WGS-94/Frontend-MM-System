@@ -78,11 +78,11 @@ export const MainContent = styled.div`
 `;
 
 export const Cards = styled.div`
-  max-width: 1260px;
+  max-width: 100%;
   margin: 0 auto;
-  grid-gap: 1rem;
+  grid-gap: 1.5rem;
 
-  /*border: 1px solid #fff;*/
+  //border: 3px solid #fff;
 
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -94,11 +94,15 @@ export const Cards = styled.div`
 
 export const Card = styled.div`
   padding: 2rem;
-  height: 25rem;
+  height: 30rem;
   background: #413D4F;
   border-radius: 10px;
   box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.25);
   transition: all 0.2s;
+
+  /*@media (max-width: 768px) {
+    height: auto;
+  }*/
 
 `;
 
@@ -109,10 +113,11 @@ export const  CardContent = styled.div`
   gap: 2rem;
 
   > img {
-    /*width: calc(20rem + 12px);
-    height: calc(20rem + 2px);*/
+    //width: calc(24rem + 15px);
+    //height: calc(20rem + 2px);
+    height: 100%;
     max-width: 100%;
-    width: 35%;
+    width: 40%;
     object-fit: cover;
     border-radius: 8px;
     border: 2px solid #fff;
@@ -120,9 +125,7 @@ export const  CardContent = styled.div`
   }
 
   
-  @media (max-width: 768px) {
-   
-  }
+  //@media (max-width: 1500px) {}
 `; 
 
 export const CardAbout = styled.div`
@@ -138,7 +141,7 @@ export const CardAboutMachine = styled.div`
   width: 100%;
   box-sizing: border-box;
 
-  /*border: 1px solid #fff;*/
+  border: 1px solid #fff;
 
   h2 {
     margin-bottom: 2px;
@@ -149,6 +152,16 @@ export const CardAboutMachine = styled.div`
   b {
     color: #ffffff;
     font-size: 2.2vmin;
+  }
+
+  @media (max-width: 1480px) {
+    h2 {
+      font-size: 1rem;
+    }
+
+    h2 {
+      font-size: 1rem;
+    }
   }
 `;
 
