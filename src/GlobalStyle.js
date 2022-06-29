@@ -22,6 +22,20 @@ body {
   background: #2C2641;
 }
 
+body::-webkit-scrollbar {
+  width: 8px;               /* width of the entire scrollbar */
+}
+
+body::-webkit-scrollbar-track {
+  background: #2C2641;        /* color of the tracking area */
+}
+
+body::-webkit-scrollbar-thumb {
+  background: #E8643A;     /* color of the scroll thumb */
+  border-radius: 20px;       /* roundness of the scroll thumb */
+  border: 3px solid #E8643A;  /* creates padding around scroll thumb */
+}
+
 :focus {
   outline: transparent;
   box-shadow: 0 0 0 2px var(--green-500);

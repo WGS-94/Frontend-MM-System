@@ -142,7 +142,7 @@ function AddNewMachine() {
                     name="radioActive" 
                     value={false} 
                     />
-                  <label htmlFor="desativo">Desativo</label>
+                  <label htmlFor="desativo">Inativo</label>
                 </IsActiveButtons>
                 <BtnSaveMachine>
                   <Link to="/dashboard" className="btnBack" type="Link">
