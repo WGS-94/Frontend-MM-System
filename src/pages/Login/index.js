@@ -74,7 +74,7 @@ function Login() {
             placeholder="Password"
           />
           <button type="submit">
-            {loading ? <i style={{ fontSize: 5 }} className="fa fa-spinner fa-pulse"/> : 'Entrar' }
+            {loading ? <i style={{ fontSize: 20 }} className="fa fa-spinner fa-pulse"/> : 'Entrar' }
           </button>
           <Link to="/register">
             <div>

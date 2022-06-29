@@ -87,7 +87,7 @@ export const Cards = styled.div`
   display: grid;
   grid-template-columns: repeat(2, 1fr);
 
-  @media (max-width: 768px) {
+  @media (max-width: 800px) {
     grid-template-columns:  1fr; 
   }
 `;
@@ -108,9 +108,11 @@ export const  CardContent = styled.div`
   justify-content: space-around;
   gap: 2rem;
 
-  img {
-    width: calc(20rem + 12px);
-    height: calc(20rem + 2px);
+  > img {
+    /*width: calc(20rem + 12px);
+    height: calc(20rem + 2px);*/
+    max-width: 100%;
+    width: 35%;
     object-fit: cover;
     border-radius: 8px;
     border: 2px solid #fff;

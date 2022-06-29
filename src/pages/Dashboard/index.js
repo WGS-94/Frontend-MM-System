@@ -97,7 +97,7 @@ function Dashboard() {
                     <h2><b>Fabricante:</b> {machine.manufacturer}</h2>
                     <h2><b>Descrição:</b> {machine.description}</h2>
                     <CardStatus>
-                      <b>{machine.status === true ? "Ativo" : "Desativo"}</b>
+                      <b>{machine.status === true ? "Ativo" : "Inativo"}</b>
                       <span className={ machine.status === true ? "green" : "red"}></span>
                     </CardStatus>
                   </CardAboutMachine>
