@@ -39,8 +39,6 @@ function EditAMachine() {
     setStatus(event.target.value);
   }
 
-  console.log(name)
-
   useEffect(() => {
     async function getMachine() {
       setLoading(true);
@@ -51,7 +49,7 @@ function EditAMachine() {
 
       const newData = response.data.machine;
 
-      console.log('Máquina: ', newData.status)
+      console.log('Máquina: ', newData.parameter)
 
       /*setThumbnail(response.data.machine.thumbnail_url);
       setName(response.data.machine.machineName);
@@ -62,7 +60,7 @@ function EditAMachine() {
       setLoading(false);
     }
     getMachine();
-  }, []);
+  }, [status]);
 
   async function handleSubmitNewMachine(event) {
 
