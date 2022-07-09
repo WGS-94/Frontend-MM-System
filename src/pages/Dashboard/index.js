@@ -23,7 +23,9 @@ function Dashboard() {
   const [modalIsOpen, setIsOpen] = React.useState(false);
 
   function reload() {
-    window.location.reload();
+    setTimeout(()=>{
+      window.location.reload();
+    }, 4000);
   };
 
   function openModal() {
@@ -40,11 +42,8 @@ function Dashboard() {
     async function loadData() {
 
       setLoading(true);
-
       const user_id = localStorage.getItem("@mmsystem:userID");
-
       const response = await api.get(`/machines/user/${user_id}`);
-
       setLoading(false);
 
       //console.log(response.data.machines)
