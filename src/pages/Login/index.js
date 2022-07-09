@@ -42,9 +42,6 @@ function Login() {
         }
       );
 
-       /*localStorage.setItem('@mmsystem:userID', response.data.token)
-     console.log('token', response.data.token)*/
-
       history.push("/dashboard");
 
       toast.success(`Bem vindo, Login efetuado com sucesso!`);

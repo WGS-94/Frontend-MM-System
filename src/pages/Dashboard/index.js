@@ -78,14 +78,16 @@ function Dashboard() {
                   display: "flex",
                   justifyContent: "center",
                   alignItems: "center",
+                  minHeight: '50vh',
+                  padding: '0 2rem',
                 }}
               >
                 <i style={{ fontSize: 30, color: '#eee' }} className="fa fa-spinner fa-pulse"></i>
-                <span style={{ marginLeft: 5, color: '#eee' }}>Carregando as máquinas</span>
+                <span style={{ fontSize: 16, marginLeft: 5, color: '#eee' }}>Carregando as máquinas</span>
               </div>
             )}
 
-          {data.length > 0 ?
+          {data.length >= 0 ?
             <Cards>
             {data.map((machine) => (
             <Card  key={machine._id} className="card card-1">
